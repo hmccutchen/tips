@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  clientele: 1
+  management: 1
+  team: 1
+  shift_decription: MyString
+  tips: 1
+  tip_avg: MyString
+  rating: 1
+  rating_avg: 1
+  more_details: MyText
+  restaurant: one
+
+two:
+  title: MyString
+  clientele: 1
+  management: 1
+  team: 1
+  shift_decription: MyString
+  tips: 1
+  tip_avg: MyString
+  rating: 1
+  rating_avg: 1
+  more_details: MyText
+  restaurant: two
