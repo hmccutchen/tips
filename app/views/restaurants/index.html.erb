@@ -1,0 +1,31 @@
+<h1>Restaurants</h1>
+
+<%= render 'search' %><br>
+
+
+
+
+ <% @restaurants.each do |r| %>
+ <%= link_to "#{r.name}", r %><br>
+ <%= r.address %><br>
+<%= r.phone_number %><br>
+<%= r.price_range %><br>
+<%= r.hours %><br>
+<% end %>
+
+
+
+
+ <!-- <%# @r["businesses"].each do |r| %>
+<img class="image-post" src="<%#= r['image_url'] %>" alt=""><br>
+<%#= link_to  "#{r['name']}", restaurant_path(:id)  %><br>
+<%#= r["categories"][0]["title"] %>
+<%#= r['price'] %><br>
+<%#= r["location"]["display_address"] %><br>
+<%#= r["display_phone"] %><br>
+<%#= r["rating"] %><br>
+<%# end %> -->
+
+
+
+
