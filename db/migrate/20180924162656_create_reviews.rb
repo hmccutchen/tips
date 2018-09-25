@@ -9,7 +9,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :tip_avg
       t.integer :rating
       t.text :more_details
-      t.references :restaurant, foreign_key: true
+      t.integer :restaurant_id
+
 
       t.timestamps
     end

@@ -1,31 +1,31 @@
-<h1>Restaurants#index</h1>
+<h1>Restaurants</h1>
 
 <%= render 'search' %><br>
 
 
 
 
-
-
-
-
-<% @r["businesses"].each do |r| %>
-<img class="image-post" src="<%= r['image_url'] %>" alt=""><br>
-<%=link_to "#{r['name']}" %><br>
-<%= r["categories"][0]["title"] %>
-<%= r['price'] %><br>
-<%= r["location"]["display_address"] %><br>
-<%= r["display_phone"] %><br>
-<%= r["rating"] %><br>
-
+ <% @restaurants.each do |r| %>
+ <%= link_to "#{r.name}", r %><br>
+ <%= r.address %><br>
+<%= r.phone_number %><br>
+<%= r.price_range %><br>
+<%= r.hours %><br>
 <% end %>
 
 
 
-  <%#= @res_name %><br>
-<%#= @res_location %><br>
- <%#= @res_rating %><br>
- <%#= @res_phone %><br>
- <%#= @res_cat %><br>
- <%#= @res_price %>
+
+ <!-- <%# @r["businesses"].each do |r| %>
+<img class="image-post" src="<%#= r['image_url'] %>" alt=""><br>
+<%#= link_to  "#{r['name']}", restaurant_path(:id)  %><br>
+<%#= r["categories"][0]["title"] %>
+<%#= r['price'] %><br>
+<%#= r["location"]["display_address"] %><br>
+<%#= r["display_phone"] %><br>
+<%#= r["rating"] %><br>
+<%# end %> -->
+
+
+
 
