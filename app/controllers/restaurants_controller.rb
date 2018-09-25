@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
 
 
 
-http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}+resaurants&location=New+York") do |http|
+http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
   http.headers["Authorization"] = "Bearer #{API_KEY}"
 end
 @r = JSON.parse(http.body_str)
@@ -27,10 +27,12 @@ p @r
  @restaurant = Restaurant.new(
   :name => r['name'],
   :address => r['location']['display_address'],
+  :res_type => r['categories'][0]['title'],
   :phone_number => r['display_phone'],
   :price_range => r['price'],
   :hours => r['hours']
   )
+
  if @restaurant.save
   p "saved"
 else
@@ -109,7 +111,7 @@ def review_params
   params.require(:review).permit(:title, :clientele, :management, :team, :more_details, :shift_description, :rating)
 end
 # def res_params
-#   params.require(:restaurant).permit(:name, :address, :phone_number, :price_range, :hours)
+#   params.require(:restaurant).permit(:name, :res_type, :address, :phone_number, :price_range, :hours)
 #   end
 
 

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_162656) do
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.string "res_type"
     t.string "phone_number"
     t.string "price_range"
     t.string "hours"
