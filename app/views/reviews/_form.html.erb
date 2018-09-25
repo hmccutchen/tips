@@ -2,11 +2,11 @@
 
 <%= form_for([@restaurant, @review]) do |t| %>
 <%= t.text_field :title, placeholder: "Title" %><br>
-<%= t.number_field :clientele %><br>
-<%= t.number_field :team %><br>
-<%= t.number_field :management %><br>
+<%= t.number_field :clientele, max: 5, min:1, placeholder: "clientele" %><br>
+<%= t.number_field :team, max: 5, min:1, placeholder: "team" %><br>
+<%= t.number_field :management, max: 5, min:1, placeholder: "management" %><br>
 <%= t.text_field :shift_description, placeholder: "Whats a shift like?" %><br>
-<%= t.number_field :rating %><br>
+<%= t.number_field :rating, max: 5, min: 1, placeholder: "Overall rating" %><br>
 <%= t.text_field :more_details, placeholder: "anything else?" %><br>
 <%= t.submit "submit" %>
 <% end %>

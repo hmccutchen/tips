@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
 
 
 
-http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
+http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}+resaurants&location=New+York") do |http|
   http.headers["Authorization"] = "Bearer #{API_KEY}"
 end
 @r = JSON.parse(http.body_str)
@@ -86,7 +86,7 @@ def create
   @review = @restaurant.reviews.new(review_params)
 respond_to do |format|
   if @review.save!
-    format.html {redirect_to '/'}
+
 
   else
     render 'show'

@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_162656) do
     t.integer "management"
     t.integer "team"
     t.text "shift_description"
-    t.string "tip_avg"
+    t.integer "tip_avg"
     t.integer "rating"
     t.text "more_details"
     t.integer "restaurant_id"
