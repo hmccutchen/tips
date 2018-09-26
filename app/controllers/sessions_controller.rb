@@ -22,6 +22,12 @@ def create
     end
 end
 
+def destroy
+  session[:user_id] = nil
+    log_out if logged_in?
+    p 'Logged out successfully'
+    redirect_to pages_home_path
+  end
 
 
 

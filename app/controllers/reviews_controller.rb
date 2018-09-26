@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
     p @user
      @restaurant = Restaurant.find(params[:restaurant_id])
     @review = @restaurant.reviews.new(review_params)
-
+     @user.reviews << @review
     if @review.save!
       redirect_to '/'
     else
