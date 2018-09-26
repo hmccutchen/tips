@@ -2,6 +2,7 @@
 
 <%= form_for([@restaurant, @review]) do |t| %>
 <%= t.text_field :title, placeholder: "Title" %><br>
+<%= t.number_field :tip_avg, placeholder: "Tip average" %>/hr<br>
 <%= t.number_field :clientele, max: 5, min:1, placeholder: "clientele" %><br>
 <%= t.number_field :team, max: 5, min:1, placeholder: "team" %><br>
 <%= t.number_field :management, max: 5, min:1, placeholder: "management" %><br>
