@@ -3,19 +3,12 @@
 
 
 
-<img class="image-post" src="<%#=@c['image_url'] %>" alt="#"><br>
+<img class="image-post" src="<%=@restaurant.picture %>" alt="#"><br>
 <%= @restaurant.address %><br>
 <%= @restaurant.phone_number %><br>
 <%= @restaurant.price_range %><br>
 <%= @restaurant.hours %>
 
 
-<!--  <%#= @c['display_phone'] %><br>
- <%#= @c['price'] %><br>
- <%#= @c['location']['display_address'] %>
- <%#@c['hours'].each do |h| %>
- <p> Open: <%#= h['open'][1]['start'] %> -
-  Closed: <%#= h['open'][1]['end'] %></p>
- <%# end %> -->
 
 <%= render :partial => 'reviews/form' %>

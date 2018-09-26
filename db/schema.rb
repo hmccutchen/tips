@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_020024) do
+ActiveRecord::Schema.define(version: 2018_09_26_202759) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,9 +55,15 @@ ActiveRecord::Schema.define(version: 2018_09_26_020024) do
     t.integer "rating"
     t.text "more_details"
     t.integer "restaurant_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews_users", id: false, force: :cascade do |t|
+    t.integer "review_id", null: false
+    t.integer "user_id", null: false
+    t.index ["review_id", "user_id"], name: "index_reviews_users_on_review_id_and_user_id"
+    t.index ["user_id", "review_id"], name: "index_reviews_users_on_user_id_and_review_id"
   end
 
   create_table "users", force: :cascade do |t|

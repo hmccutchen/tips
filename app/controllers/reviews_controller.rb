@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @user = User.find(session[:user_id])
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new
 
@@ -21,9 +22,13 @@ class ReviewsController < ApplicationController
 
 
   def create
+    @user = User.find(session[:user_id])
+
+    p @user
      @restaurant = Restaurant.find(params[:restaurant_id])
     @review = @restaurant.reviews.new(review_params)
-    if @review.save
+
+    if @review.save!
       redirect_to '/'
     else
       render 'new'
@@ -35,7 +40,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :clientele, :management, :team, :more_details, :shift_description, :rating)
+    params.require(:review).permit(:title, :clientele, :management, :tip_avg, :team, :more_details, :shift_description, :rating)
   end
 
 
