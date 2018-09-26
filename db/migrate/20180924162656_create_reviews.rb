@@ -10,6 +10,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :rating
       t.text :more_details
       t.integer :restaurant_id
+      t.integer :user_id
 
 
       t.timestamps
