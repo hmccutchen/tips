@@ -1,5 +1,7 @@
 <h1>home</h1>
 
+<%= link_to "Log-In", login_path %> OR <%= link_to "sign-up", new_user_path %><br>
+
 
 <% @reviews.each do |r| %>
 <img class="image-post" src= "<%=r.restaurant['picture']%>" alt=""><br>
@@ -13,17 +15,18 @@
 <% r.clientele.times do %>
 <span class="star"></span>
 <% end %><br>
+
 <% r.team.times do %>
 <span class="star"></span>
 <%  end %> <br>
+
 <% r.management.times do %>
 <span class="star"></span>
 <% end %><br>
+
 <%= r.more_details %><br>
 <%= r.shift_description %><br>
-<% r.tip_avg.times do %>
-<span class="star"></span>
-<% end %><br>
+<%= r.tip_avg%><br>
 <% r.rating.times do  %>
 <span class="star"></span>
 <% end %>

@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <h1>Restaurants</h1> <%=link_to "logoout", logout_path %>
 
 <%= render 'search' %><br>
@@ -14,7 +15,9 @@
 <%= r.price_range %><br>
 <%= r.hours %><br>
 <% end %>
-
+<% else %>
+<h1>Must be logged in!</h1>
+<% end %>
 
 
 
