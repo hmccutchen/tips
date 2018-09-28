@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
-
+gem 'acts_as_votable', '~> 0.11.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
