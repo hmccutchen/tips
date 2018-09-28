@@ -25,7 +25,7 @@ p @r
  r["rating"]
 p r["image_url"]
  @restaurant = Restaurant.new(
-  :name => r['name'],
+  :name => r['name'].gsub(/\W/, ' ').delete(' '),
   :picture => r["image_url"],
   :address => r['location']['display_address'],
   :res_type => r['categories'][0]['title'],
