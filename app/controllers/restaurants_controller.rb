@@ -23,14 +23,17 @@ p @r
  r["location"]["display_address"]
  r["display_phone"]
  r["rating"]
-
+p r["image_url"]
  @restaurant = Restaurant.new(
   :name => r['name'],
+  :picture => r["image_url"],
   :address => r['location']['display_address'],
+  :res_type => r['categories'][0]['title'],
   :phone_number => r['display_phone'],
   :price_range => r['price'],
   :hours => r['hours']
   )
+
  if @restaurant.save
   p "saved"
 else
@@ -55,6 +58,9 @@ end
 
 
 def show
+
+  p session[:user_id]
+
   @review = Review.new
   @restaurant = Restaurant.find(params[:id])
   # @call = params[:id]
@@ -86,7 +92,7 @@ def create
   @review = @restaurant.reviews.new(review_params)
 respond_to do |format|
   if @review.save!
-    format.html {redirect_to '/'}
+
 
   else
     render 'show'
@@ -109,7 +115,7 @@ def review_params
   params.require(:review).permit(:title, :clientele, :management, :team, :more_details, :shift_description, :rating)
 end
 # def res_params
-#   params.require(:restaurant).permit(:name, :address, :phone_number, :price_range, :hours)
+#   params.require(:restaurant).permit(:name, :res_type, :address, :phone_number, :price_range, :hours)
 #   end
 
 

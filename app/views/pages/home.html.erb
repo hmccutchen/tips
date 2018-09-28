@@ -1,0 +1,32 @@
+<h1>home</h1>
+
+
+<% @reviews.each do |r| %>
+<img class="image-post" src= "<%=r.restaurant['picture']%>" alt=""><br>
+<h3><%= r.restaurant['name']%></h3>
+<%= r.restaurant['address']%><br>
+<%= r.restaurant['res_type']%><br>
+<%= r.restaurant['phone_number']%><br>
+<%= r.restaurant['price_range']%><br><br>
+<%= r.title %><br>
+<%= r.role %><br>
+<% r.clientele.times do %>
+<span class="star"></span>
+<% end %><br>
+<% r.team.times do %>
+<span class="star"></span>
+<%  end %> <br>
+<% r.management.times do %>
+<span class="star"></span>
+<% end %><br>
+<%= r.more_details %><br>
+<%= r.shift_description %><br>
+<% r.tip_avg.times do %>
+<span class="star"></span>
+<% end %><br>
+<% r.rating.times do  %>
+<span class="star"></span>
+<% end %>
+<br><br>
+<% end %>
+
