@@ -2,12 +2,131 @@
 
 <%= form_for([@restaurant, @review]) do |t| %>
 <%= t.text_field :title, placeholder: "Title" %><br>
+<%= t.select :role, [['Server'],['Bartender'],['Other']] %><br>
 <%= t.number_field :tip_avg, placeholder: "Tip average" %>/hr<br>
-<%= t.number_field :clientele, max: 5, min:1, placeholder: "clientele" %><br>
-<%= t.number_field :team, max: 5, min:1, placeholder: "team" %><br>
-<%= t.number_field :management, max: 5, min:1, placeholder: "management" %><br>
+
+<%= t.radio_button :clientele, 1, :id => "1" %><label id="clientele1" for="star1" title="Poor!">1 </label>
+
+<%= t.radio_button :clientele, 2, :id=> "2"  %><label id="clientele2"  for="star2" title="Poor!">2 </label>
+
+<%= t.radio_button :clientele, 3, :id=> "3"  %><label id="clientele3" for="star3" title="Average!">3 </label>
+
+<%= t.radio_button :clientele, 4, :id=> "4"  %><label id="clientele4" for="star4" title="Good!">4 </label>
+<%= t.radio_button :clientele,5, :id=> "5"  %><label id="clientele5" for="star5" title="Excellent!">5 </label><br>
+
+
+
+<%= t.radio_button :team, 1, :id =>  "t1" %><label id="team1" for="star1" title="Poor!">1 </label>
+
+<%= t.radio_button :team, 2, :id =>  "t2" %><label id="team2" for="star2" title="Poor!">2 </label>
+
+<%= t.radio_button :team, 3, :id =>  "t3" %><label id="team3" for="star3" title="average!">3 </label>
+<%= t.radio_button :team, 4, :id =>  "t4" %><label id="team4" for="star4" title="Good!">4 </label>
+<%= t.radio_button :team, 5, :id =>  "t5" %><label id="team5" for="star5" title="Excellent!">5 </label><br>
+
+
+
+<%= t.radio_button :management, 1, :id =>  "m1"  %><label id="mange1" for="star5" title="Excellent!">1 </label>
+
+<%= t.radio_button :management, 2, :id => "m2"  %><label id="mange2" for="star5" title="Excellent!">2 </label>
+
+<%= t.radio_button :management, 3, :id => "m3"  %><label id="mange3" for="star5" title="Excellent!">3 </label>
+
+<%= t.radio_button :management, 4, :id => "m4"  %><label id="mange4" for="star5" title="Excellent!">4 </label>
+
+<%= t.radio_button :management, 5, :id => "m5"  %><label id="mange5" for="star5" title="Excellent!">5 </label><br>
+
+
 <%= t.text_field :shift_description, placeholder: "Whats a shift like?" %><br>
-<%= t.number_field :rating, max: 5, min: 1, placeholder: "Overall rating" %><br>
+<%= t.radio_button :rating,1, :id =>"r1" %><label id="rate1" for="star5" title="Excellent!">1 </label>
+
+<%= t.radio_button :rating,2, :id =>"r2" %><label id="rate2" for="star5" title="Excellent!">2 </label>
+<%= t.radio_button :rating,3, :id =>"r3" %><label id="rate3" for="star5" title="Excellent!">3 </label>
+<%= t.radio_button :rating,4, :id =>"r4" %><label id="rate4" for="star5" title="Excellent!">4 </label>
+<%= t.radio_button :rating,5, :id =>"r5" %><label id="rate5" for="star5" title="Excellent!">5 </label><br>
+
+
+
+
+
 <%= t.text_field :more_details, placeholder: "anything else?" %><br>
 <%= t.submit "submit" %>
 <% end %>
+
+<script>
+
+  c1 = document.getElementById("clientele1");
+  c1.addEventListener("click", function(){document.getElementById("1").checked = true;})
+  c2 = document.getElementById("clientele2");
+  c2.addEventListener("click", function(){document.getElementById("2").checked = true;})
+  c3 = document.getElementById("clientele3");
+  c3.addEventListener("click", function(){document.getElementById("3").checked = true;})
+  c4 = document.getElementById("clientele4");
+  c4.addEventListener("click", function(){document.getElementById("4").checked = true;})
+
+  c5 = document.getElementById("clientele5");
+  c5.addEventListener("click", function(){document.getElementById("5").checked = true;
+})
+
+
+
+
+  team = document.getElementById("team1");
+  team.addEventListener("click", function(){document.getElementById("t1").checked = true;})
+
+  team2 = document.getElementById("team2");
+  team2.addEventListener("click", function(){document.getElementById("t2").checked = true;})
+
+  team3 = document.getElementById("team3");
+  team3.addEventListener("click", function(){document.getElementById("t3").checked = true;})
+  team4 = document.getElementById("team4");
+  team4.addEventListener("click", function(){document.getElementById("t4").checked = true;})
+  team5 = document.getElementById("team5");
+  team5.addEventListener("click", function(){document.getElementById("t5").checked = true;})
+
+
+ mange1 = document.getElementById("mange1");
+
+ mange1.addEventListener("click", function(){document.getElementById("m1").checked = true;})
+
+
+   mange2= document.getElementById("mange2");
+
+  mange2.addEventListener("click", function(){document.getElementById("m2").checked = true;})
+
+
+   mange3 = document.getElementById("mange3");
+
+  mange3.addEventListener("click", function(){document.getElementById("m3").checked = true;})
+
+   mange4= document.getElementById("mange4");
+
+  mange4.addEventListener("click", function(){document.getElementById("m4").checked = true;})
+
+  mange5 = document.getElementById("mange5");
+
+  mange5.addEventListener("click", function(){document.getElementById("m5").checked = true;})
+
+
+
+ rate1 = document.getElementById("rate1");
+  rate1.addEventListener("click", function(){document.getElementById("r1").checked = true;})
+  rate2 = document.getElementById("rate2");
+  rate2.addEventListener("click", function(){document.getElementById("r2").checked = true;})
+  rate3 = document.getElementById("rate3");
+  rate3.addEventListener("click", function(){document.getElementById("r3").checked = true;})
+  rate4 = document.getElementById("rate4");
+  rate4.addEventListener("click", function(){document.getElementById("r4").checked = true;})
+
+  rate5 = document.getElementById("rate5");
+  rate5.addEventListener("click", function(){document.getElementById("r5").checked = true;
+})
+
+
+
+
+
+
+
+
+</script>

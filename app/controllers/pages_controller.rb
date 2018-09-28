@@ -5,7 +5,10 @@ class PagesController < ApplicationController
 
 
   def home
-   @review = Review.all
+    @reviews = Review.all
+
+
+
   end
 
 
