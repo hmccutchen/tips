@@ -4,6 +4,16 @@ Rails.application.routes.draw do
   get '/login' =>  'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+resources :pages do
+  member do
+    get '/like' => 'pages#like'
+    get '/dislike' => 'pages#dislike'
+    get '/undislike' => 'pages#undislike'
+    get '/unlike' => 'pages#unlike'
+  end
+end
+
   resources :users
 
     resources :reviews
