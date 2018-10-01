@@ -1,16 +1,36 @@
+<% if current_user == @user  %>
 <h1>Hello <%= @user.first_name %></h1>
 <%= session[:user] %>
 <p><%= @user.position %></p>
 
-<% if current_user == @user  %>
 
 <h3>your reviews only you should be able to see...</h3>
 
 <% @user.reviews.each do |r| %>
 <%= r.title %><br>
-<%= r.role %><br><br>
+<%= r.role %><br>
+<%= r.more_details %><br>
+<%= r.shift_description %><br>
+<%= r.tip_avg%><br>
+<span><b>Clientele</b></span><br>
+<%r.clientele.times do %>
+<span class="star"></span>
+<% end %><br>
+<span><b>Team</b></span><br>
+<% r.team.times do %>
+<span class="star"></span>
+<%  end %> <br>
+<span><b>Management</b></span><br>
+<% r.management.times do %>
+<span class="star"></span>
+<% end %><br>
+<span><b>Overall Rating</b></span><br>
+<% r.rating.times do  %>
+<span class="star"></span>
+<% end %><br><br>
 <% end %>
 <% else %>
 <h1>You are not this User...</h1>
+
 
 <% end %>

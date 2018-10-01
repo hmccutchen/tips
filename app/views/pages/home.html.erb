@@ -2,8 +2,9 @@
 
 <%= link_to "Log-In", login_path %> OR <%= link_to "sign-up", new_user_path %><br>
 
-
+<div class="container">
 <% @reviews.each do |r| %>
+
 <h2><%= r.restaurant['name']%></h2>
 <img class="image-post" src= "<%=r.restaurant['picture']%>" alt=""><br>
 Address: <%= r.restaurant['address']%><br>
@@ -11,28 +12,32 @@ Address: <%= r.restaurant['address']%><br>
 Phone: <%= r.restaurant['phone_number']%><br>
 <%= r.restaurant['price_range']%><br><br>
 <span><b><%= r.title.capitalize %></b></span><br>
+<span><b>Role</b></span><br>
 <%= r.role %><br>
+<span><b>Clientele</b></span><br>
 <% r.clientele.times do %>
 <span class="star"></span>
 <% end %><br>
-
+<span><b>Team</b></span><br>
 <% r.team.times do %>
 <span class="star"></span>
 <%  end %> <br>
-
+<span><b>Management</b></span><br>
 <% r.management.times do %>
 <span class="star"></span>
 <% end %><br>
-
+<span><b>Details</b></span><br>
 <%= r.more_details %><br>
+<span><b>Shift</b></span><br>
 <%= r.shift_description %><br>
 <%= r.tip_avg%><br>
+<span><b>Overall Rating</b></span><br>
 <% r.rating.times do  %>
 <span class="star"></span>
 <% end %>
 <br><br>
 
-<% if r.get_upvotes.size > 0 %>
+<% if @user.voted_for? r %>
 
 <%= link_to "Tips", unlike_page_path(r) %>  <%=r.get_upvotes.size %>
 <%#= link_to "un-dislike:", undislike_page_path(r) %>
@@ -41,3 +46,5 @@ Phone: <%= r.restaurant['phone_number']%><br>
 <%#= link_to "dislike:", dislike_page_path(r)%> <%#= r.get_downvotes.size %>
 <% end %>
 <% end %>
+</div>
+

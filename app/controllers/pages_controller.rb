@@ -7,13 +7,13 @@ class PagesController < ApplicationController
   def home
     @reviews = Review.all
 
-
+  @user = current_user
   end
 
 
 def like
   @user = current_user
-
+p @user
 @review = Review.find(params[:id])
    @review.liked_by @user
   redirect_to '/'
