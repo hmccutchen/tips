@@ -1,11 +1,11 @@
 
-
 <%= form_for([@restaurant, @review]) do |t| %>
 <%= t.text_field :title, placeholder: "Title" %><br>
-<%= t.select :role, [['Server'],['Bartender'],['Other']] %><br>
-<%= t.number_field :tip_avg, placeholder: "Tip average" %>/hr<br>
-
-<%= t.radio_button :clientele, 1, :id => "1" %><label id="clientele1" for="star1" title="Poor!">1 </label>
+ <h4>Position: </h4>
+<%= t.select :role, [['Server'],['Bartender'],['Other']], :required => true %><br>
+<%= t.number_field :tip_avg, placeholder: "Tip average", :required => true %>/hr<br>
+  <h4>Clientele:</h4>
+<%= t.radio_button :clientele, 1, :id => "1" , :checked => true %><label id="clientele1" for="star1" title="Poor!">1 </label>
 
 <%= t.radio_button :clientele, 2, :id=> "2"  %><label id="clientele2"  for="star2" title="Poor!">2 </label>
 
@@ -15,8 +15,8 @@
 <%= t.radio_button :clientele,5, :id=> "5"  %><label id="clientele5" for="star5" title="Excellent!">5 </label><br>
 
 
-
-<%= t.radio_button :team, 1, :id =>  "t1" %><label id="team1" for="star1" title="Poor!">1 </label>
+ <h4>Team:</h4>
+<%= t.radio_button :team, 1, :id =>  "t1",:checked => true %><label id="team1" for="star1" title="Poor!">1 </label>
 
 <%= t.radio_button :team, 2, :id =>  "t2" %><label id="team2" for="star2" title="Poor!">2 </label>
 
@@ -25,8 +25,8 @@
 <%= t.radio_button :team, 5, :id =>  "t5" %><label id="team5" for="star5" title="Excellent!">5 </label><br>
 
 
-
-<%= t.radio_button :management, 1, :id =>  "m1"  %><label id="mange1" for="star5" title="Excellent!">1 </label>
+ <h4>Management:</h4>
+<%= t.radio_button :management, 1, :id =>  "m1",:checked => true  %><label id="mange1" for="star5" title="Excellent!">1 </label>
 
 <%= t.radio_button :management, 2, :id => "m2"  %><label id="mange2" for="star5" title="Excellent!">2 </label>
 
@@ -38,7 +38,8 @@
 
 
 <%= t.text_field :shift_description, placeholder: "Whats a shift like?" %><br>
-<%= t.radio_button :rating,1, :id =>"r1" %><label id="rate1" for="star5" title="Excellent!">1 </label>
+ <h4>Rating:</h4>
+<%= t.radio_button :rating,1, :id =>"r1",:checked => true %><label id="rate1" for="star5" title="Excellent!">1 </label>
 
 <%= t.radio_button :rating,2, :id =>"r2" %><label id="rate2" for="star5" title="Excellent!">2 </label>
 <%= t.radio_button :rating,3, :id =>"r3" %><label id="rate3" for="star5" title="Excellent!">3 </label>
@@ -50,7 +51,7 @@
 
 
 <%= t.text_field :more_details, placeholder: "anything else?" %><br>
-<%= t.submit "submit" %>
+<%= t.submit "submit", class: "btn btn primary" %>
 <% end %>
 
 <script>

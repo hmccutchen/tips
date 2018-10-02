@@ -1,5 +1,5 @@
 <% if logged_in? %>
-<h1>Restaurants</h1> <%=link_to "logoout", logout_path %>
+<h1>Search for a restaurant</h1>
 
 <%= render 'search' %><br>
 
@@ -7,8 +7,8 @@
 
 
  <% @restaurants.each do |r| %>
+ <h2><%= link_to "#{r.name}", r %></h2>
  <img class="image-post" src="<%=r.picture  %>" alt=""> <br>
- <h2><%= link_to "#{r.name}", r %></h2><br>
  <%= r.address %><br>
  <%= r.res_type %><br>
 <%= r.phone_number %><br>

@@ -13,16 +13,129 @@
  *= require_tree .
  *= require_self
  */
+
  *{
   font-family: 'Dosis', sans-serif;
 
  }
 
-/*.container{
-display: grid;
-grid-template-columns: 25% 25% 25% 25%;
-grid-template-rows: 1fr 1fr 1fr 1fr;
-height: 100%;
-width: 100%;
+ /* navbar styles*/
+ .navbar{
+  background-color: #e74c3c;
+
+
+ }
+
+
+
+.navbar ul{
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+
+
 }
-*/
+
+.navbar li{
+  margin-right: 20px;
+  font-size: 23px;
+  padding: 10px;
+}
+
+
+.navbar a:hover{
+  color:#ffffff;
+ text-decoration: none;
+
+}
+
+.navbar a{
+ color: #ecf0f1;
+}
+
+
+.card{
+  display: flex;
+}
+
+.info{
+  margin-top: 73px;
+  width:50%;
+  margin-left: 20%;
+
+}
+
+
+.star-logo{
+  position: absolute;
+  left: 21px;
+  width: 24px;
+  z-index: 1;
+}
+.logo {
+  position: absolute;
+  left: 0;
+  color:#ecf0f1;
+}
+
+li.logo{
+font-size: 34px;
+}
+
+/* form styling for reviews*/
+.rform{
+background-color: #F6FAEB;
+margin-right: 30px;
+
+border: 1px solid;
+}
+div.container.rform{
+  margin-right: 20px;
+}
+input.btn.primary{
+text-align: center;
+position: absolute;
+right: 238px;
+padding-top: 6px;
+margin-top: 8px;
+background-color: #0946B2;
+color: white;
+width: 126px;
+font-size: 18px;
+}
+
+input.btn.primary:hover{
+  background-color: #2D4B7F;
+}
+
+input#review_title{
+  width: 106%;
+}
+input::placeholder{
+  text-align: center;
+  font-size: 15px;
+}
+
+input#review_tip_avg{
+  width: 94%;
+}
+
+select#review_role{
+  width: 106%;
+}
+
+input#review_shift_description{
+  width: 106%;
+}
+
+input#review_more_details{
+  width: 106%;
+}
+
+form#new_review.new_review{
+margin-left: 43px;
+padding: 50px;
+}
+
+
+

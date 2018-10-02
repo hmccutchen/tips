@@ -1,14 +1,19 @@
 <h1><%#= @c['name'] %></h1>
+
+<div class="card">
+<div class="container">
 <h1><%= @restaurant.name %></h1>
-
-
-
 <img class="image-post" src="<%=@restaurant.picture %>" alt="#"><br>
 <%= @restaurant.address %><br>
+<%= @restaurant.res_type %><br>
 <%= @restaurant.phone_number %><br>
 <%= @restaurant.price_range %><br>
 <%= @restaurant.hours %>
+</div>
 
+<div class="container rform">
 
 
 <%= render :partial => 'reviews/form' %>
+</div>
+</div>
