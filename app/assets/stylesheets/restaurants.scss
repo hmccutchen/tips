@@ -6,4 +6,67 @@
  height: 255.867px;
     width: 455.283px;
 // padding-bottom: 71px;
+padding-left: 15px;
+}
+
+.restaurant{
+  display: flex;
+  background-color: #34495e;
+
+}
+
+.restaurant h1{
+  color: white;
+  text-align: center;
+}
+
+.restaurant span{
+  color: white;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+.search-res{
+  text-align: center;
+}
+
+.search-res a{
+  color: white;
+  font-size: 35px
+}
+
+.search-res span{
+  color: white;
+  font-size: 20px;
+}
+.color{
+background-color: #27ae60;
+}
+
+.search-bar{
+  padding-left: 41px;
+}
+
+input#q{
+  width: 80%;
+
+font-size: 20px;
+}
+
+input.eyeglass{
+  width: 10%;
+  background-color: #d35400;
+  color: white;
+  line-height: 27px;
+ font-size:20px;
+margin-bottom: 8px;
+border: 1px solid #863600;
+}
+
+input.eyeglass:hover{
+  background-color: #AC4400;
+}
+
+.search-form{
+  padding-top: 10px;
 }

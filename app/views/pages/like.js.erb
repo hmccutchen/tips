@@ -1,0 +1,14 @@
+
+
+
+console.log("<%=@user %>");
+
+<%if @review.liked_by @user  %>
+console.log(<%=@user %>);
+// var tips = document.getElementById("likes");
+// tips.className= "liked";
+<%else %>
+console.log("im here!");
+<% end %>
+
+

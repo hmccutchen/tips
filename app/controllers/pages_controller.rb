@@ -13,11 +13,17 @@ class PagesController < ApplicationController
 
 def like
   @user = current_user
-p @user
-@review = Review.find(params[:id])
-   @review.liked_by @user
 
-  redirect_to '/'
+@review = Review.find(params[:id])
+    @review.liked_by @user
+
+   respond_to do |format|
+      format.js {render json: '/'}
+      format.html { p 'html response'; redirect_to '/'}
+
+end
+
+  # redirect_to '/'
 end
 
 

@@ -11,8 +11,8 @@
         <div class="hero">
           <h2><%= r.restaurant['name']%></h2>
           <img class="image-post" src= "<%=r.restaurant['picture']%>" alt=""><br>
-          <%=p r.restaurant['address']%><br>
-          <%= r.restaurant['price_range']%><br><br>
+          <span><%= r.restaurant['address']%></span><br>
+          <span><%= r.restaurant['price_range']%></span><br><br>
         </div>
 
         <!--  <%#=r.restaurant['res_type']%><br> -->
@@ -48,10 +48,10 @@
 
         <% if @user.voted_for? r %>
 
-        <%= link_to "Tips", unlike_page_path(r),  class: "likes", method: :put %>  <%=r.get_upvotes.size %>
+        <span id="tips" class="tips"><%= link_to "Tips", unlike_page_path(r),  class: "likes", method: :put, remote: :true %></span>  <%=r.get_upvotes.size %>
         <%#= link_to "un-dislike:", undislike_page_path(r) %>
         <% else %>
-        <%= link_to "Tip:", like_page_path(r), method: :put %> <%=r.get_upvotes.size %>
+       <span class="tips"> <%= link_to "Tip:", like_page_path(r), method: :put %></span> <%=r.get_upvotes.size %>
 
         <%#= link_to "dislike:", dislike_page_path(r)%> <%#= r.get_downvotes.size %>
 

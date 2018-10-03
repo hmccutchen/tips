@@ -1,14 +1,14 @@
-<h1><%#= @c['name'] %></h1>
 
-<div class="card">
+
+<div class="restaurant">
 <div class="container">
 <h1><%= @restaurant.name %></h1>
 <img class="image-post" src="<%=@restaurant.picture %>" alt="#"><br>
-<%= @restaurant.address %><br>
-<%= @restaurant.res_type %><br>
-<%= @restaurant.phone_number %><br>
-<%= @restaurant.price_range %><br>
-<%= @restaurant.hours %>
+<span><%= @restaurant.address %></span><br>
+<span><%= @restaurant.res_type %></span><br>
+<span><%= @restaurant.phone_number %></span><br>
+<span><%= @restaurant.price_range %></span><br>
+<span><%= @restaurant.hours %></span>
 </div>
 
 <div class="container rform">

@@ -54,17 +54,48 @@
 }
 
 
+/* styling for homepage cards*/
 .card{
   display: flex;
+  background-color: #34495e;
+
 }
 
+.card img{
+  padding-left: 20px;
+
+}
+
+.hero span{
+  color:#ecf0f1 ;
+  font-size: 16px;
+  padding-left:20px;
+}
+.card h2{
+  color:#ecf0f1;
+  text-align: center;
+}
 .info{
   margin-top: 73px;
   width:50%;
   margin-left: 20%;
+  color: #ecf0f1;
+  font-weight: lighter;
+  font-size: 17px;
+  padding-bottom: 5px;
+}
+
+.card:after{
+  content: " ";
+  height: 1%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: white;
 
 }
 
+/* navbar logo styles */
 
 .star-logo{
   position: absolute;
@@ -110,6 +141,7 @@ input.btn.primary:hover{
 
 input#review_title{
   width: 106%;
+  font-size: 20px;
 }
 input::placeholder{
   text-align: center;
@@ -117,25 +149,38 @@ input::placeholder{
 }
 
 input#review_tip_avg{
-  width: 94%;
+  width: 106%;
+  font-size: 20px;
 }
 
 select#review_role{
   width: 106%;
+  font-size: 20px;
 }
 
 input#review_shift_description{
   width: 106%;
+  font-size: 20px;
 }
 
 input#review_more_details{
   width: 106%;
+  font-size: 20px;
 }
 
 form#new_review.new_review{
 margin-left: 43px;
 padding: 50px;
+background-color:#F9FCF1 ;
 }
 
+.tips a{
+  color: #16a085;
+  font-size: 18px;
+}
 
+.tips a:hover{
+  color: #1abc9c;
+  text-decoration: none;
+}
 
