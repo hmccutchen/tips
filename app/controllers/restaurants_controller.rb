@@ -14,6 +14,8 @@ end
 
 http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
   http.headers["Authorization"] = "Bearer key=#{ENV'API_KEY'}"
+
+
 end
 @r = JSON.parse(http.body_str)
 p @r

@@ -1,0 +1,52 @@
+// Place all the styles related to the Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+input[type="radio"] {
+  display:none;
+}
+
+.rtitle{
+font-size: 17px;
+background-color:
+}
+
+ label:before {
+
+ content: '★ ';
+ font-size: 20px;
+
+}
+
+
+.star:after{
+ content: '★ ';
+ color: #f70;
+}
+
+.gif-image{
+  // background-image:url("http://cdn.lowgif.com/small/02827829fd94530b-space-flat-buscar-con-google-tank-think-pinterest-color-pick.gif");
+border-radius: 50%;
+background-repeat: no-repeat;
+width:23px;
+position: absolute;
+z-index: 1;
+top: 40px;
+left: 10px;
+height: 22px;
+}
+
+.tips a:visited{
+  color: #f1c40f;
+}
+
+
+input[type="radio"]:checked + label {
+  color:#f70;
+}
+
+
+
+input[type="radio"]:not(:checked) + label:hover{
+color: #f70;
+}

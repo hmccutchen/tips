@@ -1,0 +1,12 @@
+
+
+$("#<%=@review.id%>").bind('ajax:success', function(){
+
+$(this).html("<%=  ( @review.get_upvotes.size) %>");
+
+
+
+})
+
+
+
