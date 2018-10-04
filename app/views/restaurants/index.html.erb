@@ -17,8 +17,8 @@
        <% @restaurants.each do |r| %>
        <h2><%= link_to "#{r.name}", r %></h2>
        <img class="image-post" src="<%=r.picture  %>" alt=""> <br>
-       <span><%= r.address %></span><br>
-       <span><%= r.res_type %></span><br>
+       <span><%=p r.address %></span><br>
+       <span><%= r.res_type   %></span><br>
        <span><%= r.phone_number %></span><br>
        <span><%= r.price_range %></span><br>
        <span><%= r.hours %><br></span>
