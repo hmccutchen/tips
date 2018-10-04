@@ -14,4 +14,174 @@
  *= require_self
  */
 
+ *{
+  font-family: 'Dosis', sans-serif;
+
+ }
+
+ /* navbar styles*/
+ .navbar{
+  background-color: #e74c3c;
+  margin-bottom: 0px!important;
+
+ }
+
+
+
+.navbar ul{
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+
+
+}
+
+.navbar li{
+  margin-right: 20px;
+  font-size: 23px;
+  padding: 10px;
+}
+
+
+.navbar a:hover{
+  color:#ffffff;
+ text-decoration: none;
+
+}
+
+.navbar a{
+ color: #ecf0f1;
+}
+
+
+/* styling for homepage cards*/
+.card{
+  display: flex;
+  background-color: #34495e;
+
+}
+
+.card img{
+  padding-left: 20px;
+
+}
+
+.hero span{
+  color:#ecf0f1 ;
+  font-size: 16px;
+  padding-left:20px;
+}
+.card h2{
+  color:#ecf0f1;
+  text-align: center;
+}
+.info{
+  margin-top: 73px;
+  width:50%;
+  margin-left: 20%;
+  color: #ecf0f1;
+  font-weight: lighter;
+  font-size: 17px;
+  padding-bottom: 5px;
+}
+
+.card:after{
+  content: " ";
+  height: 1%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: white;
+
+}
+
+/* navbar logo styles */
+
+.star-logo{
+  position: absolute;
+  left: 21px;
+  width: 24px;
+  z-index: 1;
+}
+.logo {
+  position: absolute;
+  left: 0;
+  color:#ecf0f1;
+}
+
+li.logo{
+font-size: 34px;
+}
+
+/* form styling for reviews*/
+.rform{
+background-color: #F6FAEB;
+margin-right: 30px;
+
+border: 1px solid;
+}
+div.container.rform{
+  margin-right: 20px;
+  margin-top:30px;
+}
+input.btn.primary{
+text-align: center;
+position: absolute;
+right: 238px;
+padding-top: 6px;
+margin-top: 8px;
+background-color: #0946B2;
+color: white;
+width: 126px;
+font-size: 18px;
+}
+
+input.btn.primary:hover{
+  background-color: #2D4B7F;
+}
+
+input#review_title{
+  width: 106%;
+  font-size: 20px;
+}
+input::placeholder{
+  text-align: center;
+  font-size: 15px;
+}
+
+input#review_tip_avg{
+  width: 106%;
+  font-size: 20px;
+}
+
+select#review_role{
+  width: 106%;
+  font-size: 20px;
+}
+
+input#review_shift_description{
+  width: 106%;
+  font-size: 20px;
+}
+
+input#review_more_details{
+  width: 106%;
+  font-size: 20px;
+}
+
+form#new_review.new_review{
+margin-left: 43px;
+padding: 50px;
+background-color:#F9FCF1 ;
+}
+
+.tips a{
+  color: #16a085;
+  font-size: 18px;
+}
+
+.tips a:hover{
+  color: #1abc9c;
+  text-decoration: none;
+}
 

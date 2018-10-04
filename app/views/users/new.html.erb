@@ -1,12 +1,22 @@
-<h1>future sign up form </h1>
 
+<div class="container form-con">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="signup">
+        <div id="signup-title">
+      <h1>sign up</h1>
+          </div>
 
-<%= form_for(@user) do |f|%>
-<%= f.text_field :first_name, placeholder: "First name" %><br>
-<%= f.text_field :last_name,placeholder: "Last name" %><br>
-<%= f.text_field :username, placeholder: "username" %><br>
-<%= f.email_field :email, placeholder: "E-mail " %><br>
-<%= f.password_field :password, placeholder: "Password" %><br>
-<%= f.select :position, [["Server"], ["Bartender"],['Other']] %><br>
-<%= f.submit "Submit" %>
-<% end %>
+      <%= form_for(@user) do |f|%>
+      <%= f.text_field :first_name, placeholder: "First name" %><br>
+      <%= f.text_field :last_name,placeholder: "Last name" %><br>
+      <%= f.text_field :username, placeholder: "username" %><br>
+      <%= f.email_field :email, placeholder: "E-mail " %><br>
+      <%= f.password_field :password, placeholder: "Password" %><br>
+      <%= f.select :position, [["Server"], ["Bartender"],['Other']] %><br>
+      <%= f.submit "Sign Up", class: "btn btn-primary sign" %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>

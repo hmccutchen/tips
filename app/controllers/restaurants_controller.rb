@@ -1,13 +1,16 @@
 class RestaurantsController < ApplicationController
 
 
-  API_KEY = "mY9ou23owK6ViN4MQnkI1o-z7ksAicUDyV4Q_0Dq2Qm829nDuxlPrTQo-Vc5kU9jZlmdmoJ7p4o3Mabc9BYxPVpIKv3PnOfyCzU4S7r2SdxuJ4bE612sNNj4BEBvW3Yx"
+
 
 
   def index
     @results = params[:q]
 
-
+    if @results == nil
+    else
+      @results.downcase
+end
 
 http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
   http.headers["Authorization"] = "Bearer #{API_KEY}"
@@ -18,14 +21,15 @@ p @r
 @r["businesses"].each do |r|
  r["image_url"]
  r["name"]
- r["categories"][0]["title"]
+ p r['categories'][0]['title']
  r["price"]
  r["location"]["display_address"]
  r["display_phone"]
  r["rating"]
 p r["image_url"]
  @restaurant = Restaurant.new(
-  :name => r['name'],
+  :name => r['name'], #so this will save api data and eliminate the punctuation
+                                                  #unfortunatley I still have top query data the same way its saved in the database
   :picture => r["image_url"],
   :address => r['location']['display_address'],
   :res_type => r['categories'][0]['title'],

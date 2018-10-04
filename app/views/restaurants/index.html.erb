@@ -1,22 +1,36 @@
-<h1>Restaurants</h1> <%=link_to "logoout", logout_path %>
-
+<% if logged_in? %>
+<div class="color">
+  <div class="search-bar">
+  <img src="search.png" alt="&">
 <%= render 'search' %><br>
+  </div>
 
+<!-- this litle gif either make it responsive or remove it post myp #headache -->
+<div class="gif-image">
+<img class="gif-image" src="http://cdn.lowgif.com/small/02827829fd94530b-space-flat-buscar-con-google-tank-think-pinterest-color-pick.gif" alt="">
+</div>
 
-
-
- <% @restaurants.each do |r| %>
- <img class="image-post" src="<%=r.picture  %>" alt=""> <br>
- <h2><%= link_to "#{r.name}", r %></h2><br>
- <%= r.address %><br>
- <%= r.res_type %><br>
-<%= r.phone_number %><br>
-<%= r.price_range %><br>
-<%= r.hours %><br>
-<% end %>
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="search-res">
+       <% @restaurants.each do |r| %>
+       <h2><%= link_to "#{r.name}", r %></h2>
+       <img class="image-post" src="<%=r.picture  %>" alt=""> <br>
+       <span><%=p r.address %></span><br>
+       <span><%= r.res_type   %></span><br>
+       <span><%= r.phone_number %></span><br>
+       <span><%= r.price_range %></span><br>
+       <span><%= r.hours %><br></span>
+       <% end %>
+       <% else %>
+       <h1>Must be logged in!</h1>
+       <% end %>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
 
  <!-- <%# @r["businesses"].each do |r| %>
 <img class="image-post" src="<%#= r['image_url'] %>" alt=""><br>

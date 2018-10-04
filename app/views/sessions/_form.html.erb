@@ -1,8 +1,17 @@
-<h1>future login?</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="login">
+      <img src="star.png" alt="">
 
 
-<%= form_for(:session, url: login_path) do |f| %>
-<%= f.text_field :username, placeholder: "Username"%><br>
-<%= f.password_field :password, placeholder: "password" %><br>
-<%= f.submit "enter" %>
-<% end %>
+      <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.text_field :username, placeholder: "Username"%><br>
+      <%= f.password_field :password, placeholder: "password" %><br>
+      <%= f.submit "Log In", class: "btn btn-primary login-btn" %>
+      <% end %>
+    </section>
+    </div>
+  </div>
+</div>
