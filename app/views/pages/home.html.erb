@@ -48,12 +48,13 @@
 
         <% if @user.voted_for? r %>
 
-        <span id="tips" class="tips"><%= link_to "Tips", unlike_page_path(r),  class: "likes", method: :put, remote: :true %></span>  <%=r.get_upvotes.size %>
-        <%#= link_to "un-dislike:", undislike_page_path(r) %>
-        <% else %>
-       <span class="tips"> <%= link_to "Tip:", like_page_path(r), method: :put %></span> <%=r.get_upvotes.size %>
+        <span class="tips"><%= link_to "#{r.get_upvotes.size}", unlike_page_path(r),  class: "likes", id: "#{r.id}", method: :put, remote: true %></span>
+       <!--   <span ><%=r.get_upvotes.size %></span> -->
 
-        <%#= link_to "dislike:", dislike_page_path(r)%> <%#= r.get_downvotes.size %>
+        <% else %>
+       <span class="tips"> <%= link_to "#{r.get_upvotes.size}", like_page_path(r), class: "likes", id:"#{r.id}", method: :put,remote: true %></span>
+       <!-- <span id="uplike"> <%#=r.get_upvotes.size %> <span> -->
+
 
         <% end %><br><br>
         <% else %>
@@ -65,4 +66,5 @@
   <% end %>
 </div>
 </div>
+
 

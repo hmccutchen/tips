@@ -1,14 +1,12 @@
 
 
+$("#<%=@review.id%>").bind('ajax:success', function(){
 
-console.log("<%=@user %>");
+$(this).html("<%=  ( @review.get_upvotes.size) %>");
 
-<%if @review.liked_by @user  %>
-console.log(<%=@user %>);
-// var tips = document.getElementById("likes");
-// tips.className= "liked";
-<%else %>
-console.log("im here!");
-<% end %>
+
+
+})
+
 
 

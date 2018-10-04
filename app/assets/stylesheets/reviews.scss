@@ -20,10 +20,21 @@ input[type="radio"] {
  color: #f70;
 }
 
+.gif-image{
+  // background-image:url("http://cdn.lowgif.com/small/02827829fd94530b-space-flat-buscar-con-google-tank-think-pinterest-color-pick.gif");
+border-radius: 50%;
+background-repeat: no-repeat;
+width:20px;
+position: absolute;
+z-index: 1;
+top: 50px;
+left: 10px;
+height: 20px;
+}
 
-
-
-
+.tips a:visited{
+  color: #f1c40f;
+}
 
 
 input[type="radio"]:checked + label {

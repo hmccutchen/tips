@@ -44,8 +44,18 @@ background-color: #27ae60;
 }
 
 .search-bar{
+
   padding-left: 41px;
 }
+
+.search-bar img{
+width: 4%;
+position: absolute;
+left: 17px;
+top: 97px;
+padding-right: 11px;
+}
+
 
 input#q{
   width: 80%;
@@ -69,4 +79,10 @@ input.eyeglass:hover{
 
 .search-form{
   padding-top: 10px;
+}
+
+.search-form form{
+  margin-left: 28px;
+
+
 }

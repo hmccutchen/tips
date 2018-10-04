@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
     if @results == nil
     else
       @results.downcase.gsub(/\W/, ' ').delete(' ')
-    end
+end
 
 http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
   http.headers["Authorization"] = "Bearer #{API_KEY}"
