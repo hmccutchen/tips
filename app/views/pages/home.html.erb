@@ -10,7 +10,7 @@
     <div class="card">
         <div class="hero">
           <h2><%= r.restaurant['name']%></h2>
-          <img class="image-post" src= "<%=r.restaurant['picture']%>" alt=""><br>
+         <a href="/reviews/<%=r.id%>"><img class="image-post" src= "<%= r.restaurant['picture']%>" alt=""></a><br>
           <span><%= r.restaurant['address']%></span><br>
           <span><%= r.restaurant['price_range']%></span><br><br>
         </div>

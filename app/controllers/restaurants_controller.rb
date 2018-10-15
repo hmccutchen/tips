@@ -9,7 +9,7 @@ YELP_API ="mY9ou23owK6ViN4MQnkI1o-z7ksAicUDyV4Q_0Dq2Qm829nDuxlPrTQo-Vc5kU9jZlmdm
 
     if @results == nil
     else
-      @results.downcase
+      @results
 end
 
 http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
