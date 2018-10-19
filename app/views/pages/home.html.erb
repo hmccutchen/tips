@@ -10,7 +10,7 @@
     <div class="card">
         <div class="hero">
           <h2><%= r.restaurant['name']%></h2>
-          <img class="image-post" src= "<%=r.restaurant['picture']%>" alt=""><br>
+         <a href="/reviews/<%=r.id%>"><img class="image-post" src= "<%= r.restaurant['picture']%>" alt=""></a><br>
           <span><%= r.restaurant['address']%></span><br>
           <span><%= r.restaurant['price_range']%></span><br><br>
         </div>
@@ -48,13 +48,14 @@
 
         <% if @user.voted_for? r %>
 
-        <span class="tips"><%= link_to "#{r.get_upvotes.size}", unlike_page_path(r),  class: "likes", id: "#{r.id}", method: :put, remote: true %></span>
-       <!--   <span ><%=r.get_upvotes.size %></span> -->
+        <span class="tips"><%= link_to "tips", unlike_page_path(r), method: :put  %></span>
+    <%=r.get_upvotes.size %>
 
         <% else %>
-       <span class="tips"> <%= link_to "#{r.get_upvotes.size}", like_page_path(r), class: "likes", id:"#{r.id}", method: :put,remote: true %></span>
-       <!-- <span id="uplike"> <%#=r.get_upvotes.size %> <span> -->
-
+       <span class="tips"> <%= link_to "tip", like_page_path(r), method: :put %></span>
+       <span class="vote-count" data-id="<%=r.id %>">
+          <%=r.get_upvotes.size %>
+             </span>
 
         <% end %><br><br>
         <% else %>

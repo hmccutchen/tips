@@ -8,11 +8,13 @@ API_KEY = ENV['YELP_API_KEY']
 
     if @results == nil
     else
-      @results.downcase
+      @results
 end
 
 http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
+
   http.headers["Authorization"] = "Bearer #{API_KEY}"
+
 
 
 end
