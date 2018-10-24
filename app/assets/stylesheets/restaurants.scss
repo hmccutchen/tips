@@ -71,10 +71,12 @@ input.eyeglass{
  font-size:20px;
 margin-bottom: 8px;
 border: 1px solid #863600;
+height: 39px;
 }
 
 input.eyeglass:hover{
   background-color: #AC4400;
+  border-color: #AC4400;
 }
 
 .search-form{
