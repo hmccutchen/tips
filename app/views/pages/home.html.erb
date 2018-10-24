@@ -49,7 +49,7 @@
         <% if @user.voted_for? r %>
 
         <span class="tips"><%= link_to "tips", unlike_page_path(r), method: :put  %></span>
-    <%=r.get_upvotes.size %>
+    <span class="vote-like"><%=r.get_upvotes.size %></span>
 
         <% else %>
        <span class="tips"> <%= link_to "tip", like_page_path(r), method: :put %></span>
