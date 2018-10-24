@@ -16,7 +16,7 @@
       <div class="search-res">
        <% @restaurants.each do |r| %>
        <h2><%= link_to "#{r.name}", r %></h2>
-       <img class="image-post" src="<%=r.picture  %>" alt=""> <br>
+       <a href="restaurants/<%= r.id %>"><img class="image-post" src="<%= r.picture  %>" alt=""></a> <br>
        <span><%=p r.address %></span><br>
        <span><%= r.res_type   %></span><br>
        <span><%= r.phone_number %></span><br>

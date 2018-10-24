@@ -4,7 +4,7 @@
 
 .image-post{
  height: 255.867px;
-    width: 455.283px;
+ width: 455.283px;
 // padding-bottom: 71px;
 padding-left: 15px;
 }
@@ -40,7 +40,7 @@ padding-left: 15px;
   font-size: 20px;
 }
 .color{
-background-color: #1E2F39;
+  background-color: #1E2F39;
 }
 
 .search-bar{
@@ -49,18 +49,18 @@ background-color: #1E2F39;
 }
 
 .search-bar img{
-width: 4%;
-position: absolute;
-left: 17px;
-top: 77px;
-padding-right: 11px;
+  width: 4%;
+  position: absolute;
+  left: 17px;
+  top: 77px;
+  padding-right: 11px;
 }
 
 
 input#q{
   width: 80%;
 
-font-size: 20px;
+  font-size: 20px;
 }
 
 input.eyeglass{
@@ -68,10 +68,10 @@ input.eyeglass{
   background-color: #d35400;
   color: white;
   line-height: 27px;
- font-size:20px;
-margin-bottom: 8px;
-border: 1px solid #863600;
-height: 39px;
+  font-size:20px;
+  margin-bottom: 8px;
+  border: 1px solid #863600;
+  height: 39px;
 }
 
 input.eyeglass:hover{
