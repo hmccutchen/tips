@@ -1,12 +1,41 @@
 
 
-// $(document).bind('ajax:success', function(){
+$(document).bind('ajax:success', function(){
 
-// $(".votes-count[data-id =#{data.id}]").html("<%= (@review.get_upvotes.size) %>");
+var like = $('#vote-like');
 
-// console.log("<%= (@review.get_upvotes.size) %>");
+for(var i = 0; i < like.length; i++){
 
+  $(like).html('<%=@review.get_upvotes.size %>')
+
+console.log(like[i])
+
+}
+
+
+
+//   $('#vote-like').html('<%=@review.get_upvotes.size %>')
+
+// console.log($('#vote-like'))
+
+
+
+})
+
+
+
+
+
+
+
+// $.ajax(url: "/like").done (html) ->
+
+//   $("#vote-like").append html
+
+// $('#liking').click(function(){
 // })
+
+
 
 
 
