@@ -1,31 +1,6 @@
 
 
 
-// $("#<%=@review.id%>").bind('ajax:success', function(){
+var y = $('.vote-dislike-<%=@review.id %>').html('<%=@review.get_upvotes.size %>' )
 
-
-// $(this).html("<%= (@review.get_upvotes.size) %>");
-
-
-
-// })
-
-// $('#disliking').click(function(){
-
-// $(this).bind('ajax:success', function(){
-
-// var d = $('#vote-dislike')
-//    console.log(d[0].textContent)
-//  })
-
-// })
-
-$('#liking').click(function(){
-
-$(this).bind('ajax:success', function(){
-
-var l = $('#vote-like')
-   console.log(l[0].textContent)
- })
-
-})
+console.log(y)

@@ -1,26 +1,16 @@
 
 
-$(document).bind('ajax:success', function(){
-
-var like = $('#vote-like');
-
-for(var i = 0; i < like.length; i++){
-
-  $(like).html('<%=@review.get_upvotes.size %>')
-
-console.log(like[i])
-
-}
 
 
 
-//   $('#vote-like').html('<%=@review.get_upvotes.size %>')
 
-// console.log($('#vote-like'))
-
+// console.log('<%=params[:id]%>')
 
 
-})
+
+var x = $('.vote-like-<%=@review.id %>').html('<%=@review.get_upvotes.size %>' )
+
+console.log(x)
 
 
 
@@ -28,12 +18,6 @@ console.log(like[i])
 
 
 
-// $.ajax(url: "/like").done (html) ->
-
-//   $("#vote-like").append html
-
-// $('#liking').click(function(){
-// })
 
 
 

@@ -20,11 +20,7 @@ class PagesController < ApplicationController
       # render js: "console.log(' #{@review.get_upvotes.size}')"
 
     # redirect_to "/"
-# respond_to do |format|
 
-#     format.html { redirect_to :back }
-#     format.js  {  @review.get_upvotes.size}
-#     end
 
 
   end
