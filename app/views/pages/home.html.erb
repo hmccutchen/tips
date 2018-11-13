@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="row">
-    <% @reviews.each do |r| %>
+    <% @reviews.reverse.each do |r| %>
     <div class="col-md-12">
     <div class="card">
         <div class="hero">
@@ -48,14 +48,17 @@
 
         <% if @user.voted_for? r %>
 
-        <span class="tips"><%= link_to "tips", unlike_page_path(r), method: :put  %></span>
-    <%=r.get_upvotes.size %>
+        <span class="tips tdis-<%=r.id%>" id="disliking"><%= link_to "tips", unlike_page_path(r), method: :put,remote: true  %></span>
+
+    <span class="vote-dislike-<%= r.id %>"><%=r.get_upvotes.size%></span>
 
         <% else %>
-       <span class="tips"> <%= link_to "tip", like_page_path(r), method: :put %></span>
-       <span class="vote-count" data-id="<%=r.id %>">
-          <%=r.get_upvotes.size %>
-             </span>
+
+       <span class="tips tlik-<%=r.id%>" id="liking"> <%= link_to "tip", like_page_path(r), method: :put, remote: true %></span>
+       <!-- <span class="vote-count" data-id="<%#=r.id %>"> -->
+
+         <span  class="vote-like-<%=r.id %>"> <span><%=r.get_upvotes.size %></span></span>
+
 
         <% end %><br><br>
         <% else %>

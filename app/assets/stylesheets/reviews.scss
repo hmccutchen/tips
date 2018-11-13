@@ -50,3 +50,23 @@ input[type="radio"]:checked + label {
 input[type="radio"]:not(:checked) + label:hover{
 color: #f70;
 }
+
+
+.back-button{
+  color: white;
+  margin-top: 10%;
+
+}
+
+.btn-group-lg > .btn, .btn-lg.back-button{
+  font-size: 22px;
+
+}
+
+.btn.focus, .btn:focus, .btn.back-button:hover{
+
+  color: #E74C3C;
+}
+
+
+

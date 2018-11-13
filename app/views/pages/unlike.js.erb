@@ -1,11 +1,9 @@
 
 
 
-// $("#<%=@review.id%>").bind('ajax:success', function(){
+var y = $('.vote-dislike-<%=@review.id %>').html('<%=@review.get_upvotes.size %>' )
 
 
-// $(this).html("<%= (@review.get_upvotes.size) %>");
+var w = $('.tdis-<%=@review.id %>').html('<%= j(link_to "tip", like_page_path(@review.id))%>')
+console.log(w)
 
-
-
-// })
