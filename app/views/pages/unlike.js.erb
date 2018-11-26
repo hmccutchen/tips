@@ -1,9 +1,13 @@
 
 
 
-var y = $('.vote-dislike-<%=@review.id %>').html('<%=@review.get_upvotes.size %>' )
+ $('.vote-dislike-<%=@review.id %>').text('<%=@review.get_upvotes.size %>' )
 
 
-var w = $('.tdis-<%=@review.id %>').html('<%= j(link_to "tip", like_page_path(@review.id))%>')
-console.log(w)
+console.log("yes unliked")
+
+ $('.tdis-<%=@review.id %>').html('<%= j (link_to "tip", like_page_path(@review.id), method: :put)%>')
+
+
+
 
