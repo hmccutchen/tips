@@ -20,7 +20,7 @@ http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&loc
 
 end
 @r = JSON.parse(http.body_str)
-p @r
+
 
 @r["businesses"].each do |r|
  r["image_url"]

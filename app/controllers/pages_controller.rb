@@ -23,7 +23,6 @@ class PagesController < ApplicationController
         format.js      { render :layout => false }
       end
 
-    # redirect_to "/"
 
 
 
@@ -45,7 +44,7 @@ class PagesController < ApplicationController
 
       end
 
-    # redirect_to '/'
+
 
   end
 
