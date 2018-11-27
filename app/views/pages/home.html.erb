@@ -1,9 +1,9 @@
 
 
-<%#= link_to "Log-In", login_path %> <%#= link_to "sign-up", new_user_path %>
 
 
-<div class="container">
+
+<article class="container">
   <div class="row">
     <% @reviews.reverse.each do |r| %>
     <div class="col-md-12">
@@ -15,8 +15,10 @@
           <span><%= r.restaurant['price_range']%></span><br><br>
         </div>
 
+      <!-- may use these to add more info to a review, shows phone number and bussiness type -->
         <!--  <%#=r.restaurant['res_type']%><br> -->
         <!-- Phone: <%#= r.restaurant['phone_number']%><br> -->
+
         <div class="info">
           <span class="rtitle"><b><%= r.title.capitalize %></b></span><br>
           <span><b>Role</b></span><br>
@@ -69,6 +71,6 @@
 
   <% end %>
 </div>
-</div>
+</article>
 
 

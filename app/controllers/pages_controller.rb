@@ -17,9 +17,12 @@ class PagesController < ApplicationController
     @review = Review.find(params[:id])
     @review.liked_by @user
 
-      # render js: "console.log(' #{@review.get_upvotes.size}')"
+      respond_to do |format|
 
-    # redirect_to "/"
+        format.html    { redirect_back fallback_location: root_path}
+        format.js      { render :layout => false }
+      end
+
 
 
 
@@ -34,8 +37,14 @@ class PagesController < ApplicationController
     @review = Review.find(params[:id])
     @review.unliked_by @user
 
+      respond_to do |format|
 
-    # redirect_to '/'
+        format.js  { render :layout => false }
+        format.html  { redirect_back fallback_location: root_path}
+
+      end
+
+
 
   end
 

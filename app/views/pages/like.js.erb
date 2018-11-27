@@ -4,18 +4,23 @@
 
 
 
-// console.log('<%=params[:id]%>')
 
 
 
-var x = $('.vote-like-<%=@review.id %>').html('<%=@review.get_upvotes.size %>' )
 
+ $('.vote-like-<%=@review.id %>').text('<%=@review.get_upvotes.size %>' )
+
+
+
+
+$('.tlik-<%=@review.id %>').html('<%= j (link_to "tips", unlike_page_path(@review.id), method: :put)%>')
+
+console.log("liked!")
 
 //maybe if i can use ajax on the actual links as well,
 //changeing the paths i might be able to toggle likes and unlikes?
 
-var z = $('.tlik-<%=@review.id %>').html('<%= j(link_to "tips", unlike_page_path(@review.id))%>')
-console.log(z)
+
 
 
 
