@@ -1,18 +1,18 @@
 
 
 
-
-
 <article class="container">
   <div class="row">
     <% @reviews.reverse.each do |r| %>
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-12">
     <div class="card">
         <div class="hero">
           <h2><%= r.restaurant['name']%></h2>
-         <a href="/reviews/<%=r.id%>"><img class="image-post" src= "<%= r.restaurant['picture']%>" alt=""></a><br>
-          <span><%= r.restaurant['address']%></span><br>
-          <span><%= r.restaurant['price_range']%></span><br><br>
+
+         <a href="/reviews/<%=r.id%>"><%= image_tag("#{r.restaurant['picture']}", class: "image-post") %></a><br>
+
+          <span class="restaurant-info"><%= r.restaurant['address']%></span><br>
+          <span class="restaurant-info"><%= r.restaurant['price_range']%></span><br><br>
         </div>
 
       <!-- may use these to add more info to a review, shows phone number and bussiness type -->

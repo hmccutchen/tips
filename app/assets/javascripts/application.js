@@ -16,3 +16,17 @@
 //= require turbolinks
 //= require_tree .
 
+
+
+$(document).ready(function(){
+  $('.image-post').on('error', function(){
+    $(this).attr('src', 'search.png')
+  })
+});
+
+
+  // $('#error-image').on('error', function(){
+  //     console.log("here!")
+  //   $(this).attr('src', 'search.png')
+  // })
+

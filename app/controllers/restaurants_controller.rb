@@ -23,14 +23,14 @@ end
 
 
 @r["businesses"].each do |r|
- r["image_url"]
+ p r["image_url"]
  r["name"]
   r['categories'][0]['title']
  r["price"]
  r["location"]["display_address"]
  r["display_phone"]
  r["rating"]
- r["image_url"]
+
  @restaurant = Restaurant.new(
   :name => r['name'], #so this will save api data and eliminate the punctuation
                                                   #unfortunatley I still have top query data the same way its saved in the database
