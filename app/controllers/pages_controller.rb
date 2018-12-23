@@ -23,9 +23,6 @@ class PagesController < ApplicationController
         format.js      { render :layout => false }
       end
 
-
-
-
   end
 
 

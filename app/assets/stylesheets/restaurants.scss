@@ -6,8 +6,20 @@
  height: 255.867px;
  width: 455.283px;
 // padding-bottom: 71px;
-padding-left: 15px;
+ padding-left: 15px;
+  object-fit: contain;
 }
+
+.show-image{
+  margin-top: 20px;
+  margin-left: 240px;
+}
+
+span.restaurant-info{
+  position: relative;
+  right: -99px;
+}
+
 
 .restaurant{
   display: flex;

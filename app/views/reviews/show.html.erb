@@ -2,17 +2,42 @@
 
 
 
+<article class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
 
-<h1><%#= @restaurant.name %></h1>
-<p><%#= @restaurant.address %></p><br>
-<p><%#= @restaurant.phone_number %></p><br>
-<p><%#= @restaurant.price_range %></p><br>
-<p><%#= @restaurant.hours %></p><br>
+       <%= image_tag("#{@restaurant.picture}", class: "image-post show-image") %>
+      <div class="review-info">
+        <h1><%= @restaurant.name %></h1>
+        <p><%= @restaurant.address %></p>
+        <p><%= @restaurant.phone_number %></p>
+        <p><%= @restaurant.price_range %></p>
+      </div>
+    </div>
+  </div>
 
-<h2><%= @review.title %></h2>
-<%= @review.clientele %><br>
-<%= @review.management %><br>
- <%= @review.team %><br>
- <%= @review.more_details %><br>
- <%= @review.shift_description %><br>
- <%= @review.rating %><br>
+  <figure class="review-article">
+    <h3><%= @review.title %></h3>
+    <span>Clientele:</span>
+    <% @review.clientele.times do %>
+    <span class="star"></span>
+    <% end %><br>
+    <span>Management:</span>
+    <% @review.management.times do %>
+    <span class="star"></span>
+    <% end %><br>
+    <span>Team:</span>
+    <% @review.team.times do %>
+    <span class="star"></span>
+    <% end %><br>
+    <%= @review.more_details %><br>
+    <%= @review.shift_description %><br>
+    <span> Overall Review:</span>
+    <% @review.rating.times do %>
+    <span class="star"></span>
+    <% end %>
+  </figure>
+</article>
+
+
+
