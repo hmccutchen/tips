@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'jquery-rails'
+gem 'foreman'
+gem 'webpacker'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

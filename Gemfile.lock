@@ -84,6 +84,7 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    foreman (0.86.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.0)
@@ -122,6 +123,8 @@ GEM
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.1)
@@ -196,6 +199,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (4.2.2)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -215,6 +222,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   curb (~> 0.9.6)
+  foreman
   jbuilder (~> 2.5)
   jquery-rails
   json (~> 1.8, >= 1.8.3)
@@ -231,9 +239,10 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webpacker
 
 RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.4
+   1.17.3

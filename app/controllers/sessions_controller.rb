@@ -1,14 +1,6 @@
 class SessionsController < ApplicationController
 
 
-
-
-
-  def new
-
-  end
-
-
 def create
  user = User.find_by(username: params[:session][:username].downcase)
     if user && user.authenticate(params[:session][:password])
@@ -28,8 +20,4 @@ def destroy
     p 'Logged out successfully'
     redirect_to login_path
   end
-
-
-
-
 end

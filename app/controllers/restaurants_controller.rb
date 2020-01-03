@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
 
-API_KEY = ENV['YELP_API_KEY']
+API_KEY = "mY9ou23owK6ViN4MQnkI1o-z7ksAicUDyV4Q_0Dq2Qm829nDuxlPrTQo-Vc5kU9jZlmdmoJ7p4o3Mabc9BYxPVpIKv3PnOfyCzU4S7r2SdxuJ4bE612sNNj4BEBvW3Yx"
 
 
   def index

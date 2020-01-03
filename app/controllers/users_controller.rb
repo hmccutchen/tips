@@ -27,8 +27,6 @@ def show
   # @review.find(:review_id)
   @user = User.find(params[:id])
   @review = @user.reviews
-  p @user
-  p current_user
   if current_user != @user
     redirect_to '/'
   end
