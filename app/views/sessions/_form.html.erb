@@ -7,8 +7,8 @@
 
 
       <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.text_field :username, placeholder: "Username", value: "hass"%><br>
-      <%= f.password_field :password, placeholder: "password", value: "12345678" %><br>
+      <%= f.text_field :username, placeholder: "Username"%><br>
+      <%= f.password_field :password, placeholder: "password" %><br>
       <%= f.submit "Log In", class: "btn btn-primary login-btn" %>
       <% end %>
     </section>

@@ -2,14 +2,16 @@ class SessionsController < ApplicationController
 
 
 def create
+  raise user.authenticate.inspect
+
  user = User.find_by(username: params[:session][:username].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in(user)
-      p user
 
       redirect_to restaurants_path
     else
       msg = 'Invalid credentials'
+      puts msg.inspect
       render 'new'
     end
 end
