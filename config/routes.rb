@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'pages#home'
 
-  get '/login' =>  'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  # get '/login' =>  'sessions#new'
+  # post '/login' => 'sessions#create'
+  # get '/logout' => 'sessions#destroy'
 
 resources :pages do
   member do
