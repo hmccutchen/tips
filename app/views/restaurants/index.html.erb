@@ -1,4 +1,4 @@
-<% if logged_in? %>
+
 <div class="color">
   <div class="search-bar">
   <img src="search.png" alt="&">
@@ -22,9 +22,6 @@
        <span><%= r.phone_number %></span><br>
        <span><%= r.price_range %></span><br>
        <span><%= r.hours %><br></span>
-       <% end %>
-       <% else %>
-       <h1>Must be logged in!</h1>
        <% end %>
      </div>
    </div>

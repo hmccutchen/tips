@@ -15,7 +15,6 @@ resources :pages do
   end
 end
 
-  resources :users
 
     resources :reviews
 
