@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'pages#home'
 
-  # get '/login' =>  'sessions#new'
-  # post '/login' => 'sessions#create'
-  # get '/logout' => 'sessions#destroy'
+  root 'pages#home'
 
 resources :pages do
   member do
@@ -15,6 +12,7 @@ resources :pages do
   end
 end
 
+  resources :users
 
     resources :reviews
 

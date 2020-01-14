@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @user = User.find(session[:user_id])
+    # @user = User.find(session[:user_id])
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new
 
@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
 
 
   def create
-    @user = User.find(session[:user_id])
+    @user = current_user
 
     p @user
      @restaurant = Restaurant.find(params[:restaurant_id])

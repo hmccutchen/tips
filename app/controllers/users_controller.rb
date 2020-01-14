@@ -22,13 +22,15 @@ class UsersController < ApplicationController
 
 
 
+
 def show
-  @review.find(:review_id)
+  # @review.find(:review_id)
   @user = User.find(params[:id])
   @review = @user.reviews
   if current_user != @user
     redirect_to '/'
   end
+
 end
 
 
