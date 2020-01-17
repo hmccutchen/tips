@@ -65,8 +65,6 @@ end
 
 def show
 
-  p session[:user_id]
-
   @review = Review.new
   @restaurant = Restaurant.find(params[:id])
   # @call = params[:id]

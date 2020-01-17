@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_08_054714) do
+ActiveRecord::Schema.define(version: 2020_01_16_034903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,13 +61,17 @@ ActiveRecord::Schema.define(version: 2020_01_08_054714) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "role"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "reviews_users", id: false, force: :cascade do |t|
-    t.bigint "review_id", null: false
-    t.bigint "user_id", null: false
-    t.index ["review_id", "user_id"], name: "index_reviews_users_on_review_id_and_user_id"
-    t.index ["user_id", "review_id"], name: "index_reviews_users_on_user_id_and_review_id"
+  create_table "user_reviews", force: :cascade do |t|
+    t.bigint "review_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_user_reviews_on_review_id"
+    t.index ["user_id"], name: "index_user_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -96,4 +100,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_054714) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "reviews", "users"
+  add_foreign_key "user_reviews", "reviews"
+  add_foreign_key "user_reviews", "users"
 end

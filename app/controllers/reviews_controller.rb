@@ -9,13 +9,13 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    # @restaurant = Restaurant.find(params[:restaurant_id])
-    # @review = @restaurant.reviews.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @review = @restaurant.reviews.find(params[:id])
     @review = Review.find(params[:id])
   end
 
   def new
-    # @user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new
 
@@ -24,10 +24,9 @@ class ReviewsController < ApplicationController
 
   def create
     @user = current_user
-
-    p @user
-     @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @review = @restaurant.reviews.new(review_params)
+
      @user.reviews << @review
     if @review.save!
       redirect_to '/'

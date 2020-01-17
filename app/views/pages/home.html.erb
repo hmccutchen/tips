@@ -48,7 +48,7 @@
         <br>
 
 
-        <% if @user.voted_for? r %>
+        <%# if @user.voted_for? r %>
 
         <span class="tips tdis-<%=r.id%>" id="disliking"><%= link_to "tips", unlike_page_path(r), method: :put,remote: true  %></span>
 
@@ -62,8 +62,8 @@
 
 
        <br><br>
-        <% else %>
-        <% end %>
+        <%# else %>
+        <%# end %>
       </div>
     </div>
   </div>
