@@ -13,7 +13,10 @@ resources :pages do
 end
 
   resources :users
-    resources :reviews
+
+    resources :reviews do
+      resources :restaurants
+    end
 
 
 

@@ -15,4 +15,15 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+import Vue from 'vue/dist/vue.esm'
+import App from '../app.vue'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "Can you say hello?"
+    },
+    components: { App }
+  })
+})

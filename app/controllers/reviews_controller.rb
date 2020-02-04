@@ -4,30 +4,27 @@ class ReviewsController < ApplicationController
 
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
-
-    @review = Review.all
+    @reviews = Review.all
   end
 
   def show
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @review = @restaurant.reviews.find(params[:id])
     @review = Review.find(params[:id])
   end
 
   def new
-    @user = User.find(session[:user_id])
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new
-
   end
 
 
   def create
     @user = current_user
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @review = @restaurant.reviews.new(review_params)
+    @restaurant_review = @restaurant.reviews.new(review_params)
+    user_reviews = @user.reviews
 
-     @user.reviews << @review
+     user_reviews << @review
+
     if @review.save!
       redirect_to '/'
     else
@@ -35,8 +32,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-
-  def edit;end
   private
 
   def review_params

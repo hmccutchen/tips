@@ -1,18 +1,16 @@
 
 
 
-
-
 <article class="container">
   <div class="row">
-    <% @reviews.reverse.each do |r| %>
+    <% @reviews.reverse.each do |review| %>
     <div class="col-md-12">
     <div class="card">
-        <div class="hero">
-          <h2><%= r.restaurant['name']%></h2>
-         <a href="/reviews/<%=r.id%>"><img class="image-post" src= "<%= r.restaurant['picture']%>" alt=""></a><br>
-          <span><%= r.restaurant['address']%></span><br>
-          <span><%= r.restaurant['price_range']%></span><br><br>
+        <div class="hero" id= "hello">
+          <h2><%= review.restaurant['name']%></h2>
+         <a href="/reviews/<%="#{review.id}"%>"><img class="image-post" src= "<%= review.restaurant['picture']%>" alt=""></a><br>
+          <span><%= review.restaurant['address']%></span><br>
+          <span><%= review.restaurant['price_range']%></span><br><br>
         </div>
 
       <!-- may use these to add more info to a review, shows phone number and bussiness type -->
@@ -20,19 +18,19 @@
         <!-- Phone: <%#= r.restaurant['phone_number']%><br> -->
 
         <div class="info">
-          <span class="rtitle"><b><%= r.title.capitalize %></b></span><br>
+          <span class="rtitle"><b><%= review.title.capitalize %></b></span><br>
           <span><b>Role</b></span><br>
-          <%= r.role %><br>
+          <%= review.role %><br>
           <span><b>Clientele</b></span><br>
-          <% r.clientele.times do %>
+          <% review.clientele.times do %>
           <span class="star"></span>
           <% end %><br>
           <span><b>Team</b></span><br>
-          <% r.team.times do %>
+          <% review.team.times do %>
           <span class="star"></span>
           <%  end %> <br>
           <span><b>Management</b></span><br>
-          <% r.management.times do %>
+          <% review.management.times do %>
           <span class="star"></span>
           <% end %><br>
       <!-- <span><b>Details</b></span><br>
@@ -40,30 +38,30 @@
       <!-- <span><b>Shift</b></span><br>
         <%#= r.shift_description %><br> -->
         <span><b>Tip Avg: </b></span>
-        <%= r.tip_avg%>/hr<br>
+        <%= review.tip_avg%>/hr<br>
         <span><b>Overall Rating</b></span><br>
-        <% r.rating.times do  %>
+        <% review.rating.times do  %>
         <span class="star"></span>
         <% end %>
         <br>
 
 
-        <%# if @user.voted_for? r %>
+        <% if review.like_by @user  %>
 
-        <span class="tips tdis-<%=r.id%>" id="disliking"><%= link_to "tips", unlike_page_path(r), method: :put,remote: true  %></span>
+        <span class="tips tdis-<%=review.id%>" id="disliking"><%= link_to "tips", unlike_page_path(review), method: :put,remote: true  %></span>
 
-    <span class="vote-dislike-<%= r.id %>"><%=r.get_upvotes.size%></span>
+        <span class="vote-dislike-<%= review.id %>"><%=review.get_upvotes.size%></span>
 
+        <% else %>
+         <span class="tips tlik-<%=review.id%>" id="liking"> <%= link_to "tip", like_page_path(review), method: :put, remote: true %></span>
+         <span class="vote-count" data-id="<%=review.id %>">
 
-       <span class="tips tlik-<%=r.id%>" id="liking"> <%= link_to "tip", like_page_path(r), method: :put, remote: true %></span>
-       <!-- <span class="vote-count" data-id="<%#=r.id %>"> -->
-
-         <span  class="vote-like-<%=r.id %>"> <span><%=r.get_upvotes.size %></span></span>
+         <span  class="vote-like-<%=review.id %>"> <span><%=review.get_upvotes.size %></span></span>
 
 
        <br><br>
         <%# else %>
-        <%# end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -71,5 +69,9 @@
   <% end %>
 </div>
 </article>
+
+<script>
+  console.log("this is here and working!")
+</script>
 
 
