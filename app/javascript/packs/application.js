@@ -20,10 +20,11 @@ import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
-    el: '#app',
+    el: '#containers',
     data: {
-      message: "Can you say hello?"
+      reviews: JSON.parse(containers.dataset.reviews)
     },
+    template: "<App :new_reviews='reviews' />",
     components: { App }
   })
 })

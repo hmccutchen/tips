@@ -21,8 +21,6 @@ class UsersController < ApplicationController
   end
 
 
-
-
 def show
   # @review.find(:review_id)
   @user = User.find(params[:id])

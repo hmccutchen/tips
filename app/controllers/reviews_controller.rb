@@ -21,11 +21,10 @@ class ReviewsController < ApplicationController
     @user = current_user
     @restaurant = Restaurant.find(params[:restaurant_id])
     @restaurant_review = @restaurant.reviews.new(review_params)
-    user_reviews = @user.reviews
 
-     user_reviews << @review
+    @user.reviews << @restaurant_review
 
-    if @review.save!
+    if @restaurant_review.save
       redirect_to '/'
     else
       render 'new'
