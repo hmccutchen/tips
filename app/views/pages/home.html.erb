@@ -3,34 +3,34 @@
 
 
 
-<%= tag.div id: :containers, data: { reviews: @reviews.to_json(include: :restaurant)} %>
+<%= tag.div id: :containers, data: { reviews: @reviews.to_json(include: [:restaurant, :user])} %>
 
 
+<%# @reviews.each do |review| %>
+
+<%# if review.like_by @user  %>
+
+<!-- <span class="tips tdis-<%#=review.id%>" id="disliking"><%#= link_to "tips", unlike_page_path(review), method: :put,remote: true  %></span>
+
+<span class="vote-dislike-<%#= review.id %>"><%#=review.get_upvotes.size%></span>
+
+<%# else %>
+<span class="tips tlik-<%#=review.id%>" id="liking"> <%#= link_to "tip", like_page_path(review), method: :put, remote: true %></span>
+<span class="vote-count" data-id="<%#=review.id %>">
+
+ <span  class="vote-like-<%#=review.id %>"> <span><%#=review.get_upvotes.size %></span></span>
 
 
-        <%# if review.like_by @user  %>
+ <br><br>
 
-       <!--  <span class="tips tdis-<%#=review.id%>" id="disliking"><%#= link_to "tips", unlike_page_path(review), method: :put,remote: true  %></span>
-
-        <span class="vote-dislike-<%#= review.id %>"><%#=review.get_upvotes.size%></span>
-
-        <%# else %>
-         <span class="tips tlik-<%#=review.id%>" id="liking"> <%#= link_to "tip", like_page_path(review), method: :put, remote: true %></span>
-         <span class="vote-count" data-id="<%#=review.id %>">
-
-         <span  class="vote-like-<%#=review.id %>"> <span><%#=review.get_upvotes.size %></span></span>
-
-
-       <br><br>
-        <%# else %>
-        <%# end %>
-      </div>
-    </div>
-  </div>
-
-  <%# end %>
+ <%# end %>
 </div>
-</article> -->
+</div>
+</div>
+
+<%# end %>
+</div>
+ -->
 
 
 
