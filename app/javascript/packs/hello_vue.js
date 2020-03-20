@@ -5,8 +5,8 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
-import App from '../app.vue'
+// import Vue from 'vue'
+// import App from '../app.vue'
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   const app = new Vue({
@@ -25,25 +25,13 @@ import App from '../app.vue'
 // comment out the above code and uncomment the below
 // Add <%= javascript_pack_tag 'hello_vue' %> to your layout
 // Then add this markup to your html template:
-//
-// <div id='hello'>
-//   {{message}}
-//   <app></app>
-// </div>
+
+//<div id='hello'>
+//{{message}}
+// <app></app>
+//</div>
 
 
-// import Vue from 'vue/dist/vue.esm'
-// import App from '../app.vue'
-//
-// document.addEventListener('DOMContentLoaded', () => {
-//   const app = new Vue({
-//     el: '#hello',
-//     data: {
-//       message: "Can you say hello?"
-//     },
-//     components: { App }
-//   })
-// })
 //
 //
 //

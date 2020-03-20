@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :restaurant
-  has_and_belongs_to_many :users
+  belongs_to :user
+
   acts_as_votable
 end

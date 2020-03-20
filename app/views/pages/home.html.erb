@@ -3,74 +3,8 @@
 
 
 
-<article class="container">
-  <div class="row">
-    <% @reviews.reverse.each do |r| %>
-    <div class="col-md-12">
-    <div class="card">
-        <div class="hero">
-          <h2><%= r.restaurant['name']%></h2>
-         <a href="/reviews/<%=r.id%>"><img class="image-post" src= "<%= r.restaurant['picture']%>" alt=""></a><br>
-          <span><%= r.restaurant['address']%></span><br>
-          <span><%= r.restaurant['price_range']%></span><br><br>
-        </div>
-
-      <!-- may use these to add more info to a review, shows phone number and bussiness type -->
-        <!--  <%#=r.restaurant['res_type']%><br> -->
-        <!-- Phone: <%#= r.restaurant['phone_number']%><br> -->
-
-        <div class="info">
-          <span class="rtitle"><b><%= r.title.capitalize %></b></span><br>
-          <span><b>Role</b></span><br>
-          <%= r.role %><br>
-          <span><b>Clientele</b></span><br>
-          <% r.clientele.times do %>
-          <span class="star"></span>
-          <% end %><br>
-          <span><b>Team</b></span><br>
-          <% r.team.times do %>
-          <span class="star"></span>
-          <%  end %> <br>
-          <span><b>Management</b></span><br>
-          <% r.management.times do %>
-          <span class="star"></span>
-          <% end %><br>
-      <!-- <span><b>Details</b></span><br>
-        <%#= r.more_details %><br> -->
-      <!-- <span><b>Shift</b></span><br>
-        <%#= r.shift_description %><br> -->
-        <span><b>Tip Avg: </b></span>
-        <%= r.tip_avg%>/hr<br>
-        <span><b>Overall Rating</b></span><br>
-        <% r.rating.times do  %>
-        <span class="star"></span>
-        <% end %>
-        <br>
-        <% if logged_in? %>
-
-        <% if @user.voted_for? r %>
-
-        <span class="tips tdis-<%=r.id%>" id="disliking"><%= link_to "tips", unlike_page_path(r), method: :put,remote: true  %></span>
-
-    <span class="vote-dislike-<%= r.id %>"><%=r.get_upvotes.size%></span>
-
-        <% else %>
-
-       <span class="tips tlik-<%=r.id%>" id="liking"> <%= link_to "tip", like_page_path(r), method: :put, remote: true %></span>
-       <!-- <span class="vote-count" data-id="<%#=r.id %>"> -->
-
-         <span  class="vote-like-<%=r.id %>"> <span><%=r.get_upvotes.size %></span></span>
+<%= tag.div id: :containers, data: { reviews: @reviews.to_json(include: [:restaurant, :user])} %>
 
 
-        <% end %><br><br>
-        <% else %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <% end %>
-</div>
-</article>
 
 

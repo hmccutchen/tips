@@ -32,6 +32,8 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'jquery-rails'
 gem 'foreman'
 gem 'webpacker'
+gem 'devise'
+gem 'binding_of_caller', '~> 0.8.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

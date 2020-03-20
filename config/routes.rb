@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  devise_for :users
 
-  get '/login' =>  'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  root 'pages#home'
 
 resources :pages do
   member do
     put '/like' => 'pages#like'
-    get '/dislike' => 'pages#dislike'
+    put '/dislike' => 'pages#dislike'
     get '/undislike' => 'pages#undislike'
     put '/unlike' => 'pages#unlike'
   end
@@ -16,11 +14,13 @@ end
 
   resources :users
 
-    resources :reviews
+    resources :reviews do
+      resources :restaurants
+    end
+
 
 
   resources :restaurants do
-
     resources :reviews
   end
 

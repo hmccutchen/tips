@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_163357) do
+ActiveRecord::Schema.define(version: 2020_01_16_034903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,24 +61,29 @@ ActiveRecord::Schema.define(version: 2018_09_28_163357) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "role"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "reviews_users", id: false, force: :cascade do |t|
-    t.bigint "review_id", null: false
-    t.bigint "user_id", null: false
-    t.index ["review_id", "user_id"], name: "index_reviews_users_on_review_id_and_user_id"
-    t.index ["user_id", "review_id"], name: "index_reviews_users_on_user_id_and_review_id"
+  create_table "user_reviews", force: :cascade do |t|
+    t.bigint "review_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_user_reviews_on_review_id"
+    t.index ["user_id"], name: "index_user_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.string "position"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
@@ -95,4 +100,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_163357) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "reviews", "users"
+  add_foreign_key "user_reviews", "reviews"
+  add_foreign_key "user_reviews", "users"
 end

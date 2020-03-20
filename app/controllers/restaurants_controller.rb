@@ -51,11 +51,6 @@ end
 
 end
 
-def search; end
-
-
-
-
 
 def new
   @restaurant = Restaurant.find(params[:restaurant_id])
@@ -64,31 +59,8 @@ end
 
 
 def show
-
-  p session[:user_id]
-
   @review = Review.new
   @restaurant = Restaurant.find(params[:id])
-  # @call = params[:id]
-  # http = Curl.get("https://api.yelp.com/v3/businesses/#{@call}") do |http|
-  #   http.headers["Authorization"] = "Bearer #{API_KEY}"
-  # end
-  # @c = JSON.parse(http.body_str)
-
- #  @restaurant = Restaurant.new(
- #    :name => @c['name'],
- #    :address => @c['location']['display_address'],
- #    :phone_number => @c['display_phone'],
- #    :price_range => @c['price'],
- #    :hours => @c['hours'][0]['open'][1]['start']
- #    )
- #  if @restaurant.save
-
- #   p @restaurant
- # else
- #  render "show"
- #  p "did not save"
-# end
 end
 
 
@@ -105,13 +77,6 @@ respond_to do |format|
   end
   end
 end
-
-
-
-
-def edit
-end
-
 
 
 

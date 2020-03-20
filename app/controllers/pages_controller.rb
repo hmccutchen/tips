@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 
-
-
+skip_before_action :verify_authenticity_token
 
 
   def home
@@ -10,50 +9,31 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-
   def like
     @user = current_user
 
     @review = Review.find(params[:id])
     @review.liked_by @user
-
-      respond_to do |format|
-
-        format.html    { redirect_back fallback_location: root_path}
-        format.js      { render :layout => false }
-      end
-
-
-
-
   end
-
-
-
 
   def unlike
     @user = current_user
 
     @review = Review.find(params[:id])
     @review.unliked_by @user
+  end
 
-      respond_to do |format|
+  def dislike
+    @user = current_user
 
-        format.js  { render :layout => false }
-        format.html  { redirect_back fallback_location: root_path}
-
-      end
-
-
-
+    @review = Review.find(params[:id])
+    @review.disliked_by @user
   end
 
   def show
     @review = Review.find(params[:id])
 
   end
-
-
 
 # not sure I want to use a dislike button but If I do these are the methods already built and working for them.
 
