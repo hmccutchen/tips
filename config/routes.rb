@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 resources :pages do
   member do
     put '/like' => 'pages#like'
-    get '/dislike' => 'pages#dislike'
+    put '/dislike' => 'pages#dislike'
     get '/undislike' => 'pages#undislike'
     put '/unlike' => 'pages#unlike'
   end

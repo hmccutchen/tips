@@ -3,7 +3,7 @@
 
     <article class="container">
       <div class="row">
-        <div v-for= "review in new_reviews">
+        <div v-for= "review in new_reviews" :key="review.id">
           <div class="col-md-12">
             <div class="card">
               <div class="hero">
@@ -17,8 +17,8 @@
               <div class=info>
                   <span class="rtitle"><b>{{review.title.charAt(0).toUpperCase() + review.title.slice(1)}}</b></span><br>
                   <span><b>Role:</b>
+                  {{review.role}}
                   </span><br>
-                  {{review.role}}<br>
                   <span><b>Clientele:</b>
                   </span><br>
                   <span v-for="star in review.clientele">
@@ -46,25 +46,19 @@
                     <span class="star">
                     </span>
                   </span><br>
-                   <span v-if="review.like_by">
-                    <span :class=`tips tdis-{{review.id}}` id="disliking">
-                      <!--I need to add the HTTP route methods for the links ie. PUT the html links are attmepted -->
-                        <a href="/pages/:id=review.id/unlike">
 
-                        </a>
+                     <button v-if=" review.likes > 0" class="tips btn btn-danger" @click="unlikeReview(review)">
+                      unlike
 
-                    </span>
-                   </span>
-                   <span v-else>
-                    <span  id="liking">
+                     </button>
 
-                      <button :class="tips" v-on:click="likeReview(review)">
-                        Like
+
+
+                     <button v-else-if="review.likes === 0" class="tips btn btn-primary" @click="likeReview(review)">
+                       Like
+
                       </button>
 
-
-                      </span>
-                   </span>
               </div>
             </div>
           </div>
@@ -75,17 +69,48 @@
 </template>
 
   <script>
+
     export default {
       props: ["new_reviews"],
+
+      data() {
+        return {
+          like: {},
+          unlike: {}
+        }
+      },
+
       methods: {
+
         likeReview(review){
 
-          this.$http.put(`/pages/ + ${review.id} + /like`).then(response => {
+          this.$http.put(`/pages/${review.id}/like`).then(res => {
 
-          })
 
-        }
-      }
+                  if(res.body.voted_up){
+                    review.likes += 1
+                  }
+
+          }).catch(e => console.log(e))
+        },
+
+        unlikeReview(review){
+          this.$http.put(`/pages/${review.id}/unlike`).then(res =>{
+
+
+
+             if(res.body.voted_down === false){
+              review.likes -= 1
+                  }
+
+
+
+
+          }).catch(e => console.log(e))
+        },
+
+      },
+
     }
 
   </script>

@@ -17,14 +17,43 @@
 
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
+import vueResource from 'vue-resource';
+import TurboLinksAdapter from 'vue-turbolinks';
 
-document.addEventListener('DOMContentLoaded', () => {
+Vue.use(TurboLinksAdapter);
+Vue.use(vueResource);
+
+
+document.addEventListener('turbolinks:load', () => {
+  var element = document.getElementById("containers")
+  if (element != null) {
   const app = new Vue({
     el: '#containers',
     data: {
-      reviews: JSON.parse(containers.dataset.reviews)
+      reviews: []
+
     },
+
+    created(){
+
+        this.$http.get("/").then(res => {
+
+            this.reviews = res.body.reviews
+          console.log("this is the console log")
+
+
+            for(let reviews of res.body.reviews){
+            // this.$data.userVoted = reviews.user_voted
+                // this.userVoted = reviews.user_voted
+                this.userLikes = reviews.likes
+                this.$data.userVotedUp = reviews.voted_up
+                this.userVotedDown = reviews.voted_down
+
+            }
+        })
+      },
     template: "<App :new_reviews='reviews' />",
-    components: { App }
+    components: { App },
   })
+  }
 })
