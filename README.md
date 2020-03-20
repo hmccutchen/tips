@@ -15,7 +15,9 @@ Tippio is an app made for Restaurant employees specifically, Servers and bartend
 * Curb
 * better errors
 * acts as votable
-* jquery-rails
+* Vue.js
+* foreman
+* webpacker
 ##  Link
 https://tippio.herokuapp.com/
 
