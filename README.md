@@ -10,12 +10,13 @@ Tippio is an app made for Restaurant employees specifically, Servers and bartend
 *  **Vanilla Javascript**- Largely used for Dom manipulation specifically for the review form logic.
 *  **AJAX** - lightly used for like button for created reviews by users called "tips".
 *  **Bootstrap** - Used to create responsive design with bootstraps grid system.
+* **Vue.js** - used for specific rails views with SSR, Reviews liking and unliking posts 
 # Gems
 * Bcrypt
 * Curb
 * better errors
 * acts as votable
-* Vue.js
+* devise
 * foreman
 * webpacker
 ##  Link
