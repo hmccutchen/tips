@@ -8,11 +8,9 @@ class RestaurantsController < ApplicationController
       @results
 end
 
-yelp_api_key = "mY9ou23owK6ViN4MQnkI1o-z7ksAicUDyV4Q_0Dq2Qm829nDuxlPrTQo-Vc5kU9jZlmdmoJ7p4o3Mabc9BYxPVpIKv3PnOfyCzU4S7r2SdxuJ4bE612sNNj4BEBvW3Yx"
-
 http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
 
-  http.headers["Authorization"] = "Bearer #{yelp_api_key}"
+  http.headers["Authorization"] = "Bearer #{ENV['Yelp_Api_Key']}"
 
 
 

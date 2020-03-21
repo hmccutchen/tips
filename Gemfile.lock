@@ -90,6 +90,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -239,6 +243,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   curb (~> 0.9.6)
   devise (~> 4.7.1)
+  dotenv-rails
   foreman
   jbuilder (~> 2.5)
   jquery-rails
