@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def new
     @user = User.new
   end
@@ -8,7 +7,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-    # p @user
       redirect_to '/'
     else
       render 'new'
@@ -20,6 +18,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+ def sign_out
+ end
 
 def show
   # @review.find(:review_id)
@@ -30,11 +30,6 @@ def show
   end
 
 end
-
-
-
-
-
 
   private
 

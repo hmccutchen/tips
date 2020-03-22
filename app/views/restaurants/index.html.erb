@@ -14,31 +14,17 @@
   <div class="row">
     <div class="col-md-12 col-sm-12">
       <div class="search-res">
-       <% @restaurants.each do |r| %>
-       <h2><%= link_to "#{r.name}", r %></h2>
-       <a href="restaurants/<%= r.id %>"><img class="image-post" src="<%= r.picture  %>" alt=""></a> <br>
-       <span><%=p r.address %></span><br>
-       <span><%= r.res_type   %></span><br>
-       <span><%= r.phone_number %></span><br>
-       <span><%= r.price_range %></span><br>
-       <span><%= r.hours %><br></span>
+       <% @restaurants.shuffle.each do |restaurant| %>
+       <h2><%= link_to "#{restaurant.name}", restaurant %></h2>
+       <a href="restaurants/<%= restaurant.id %>"><img class="image-post" src="<%= restaurant.picture  %>" alt=""></a> <br>
+       <span><%=p restaurant.address %></span><br>
+       <span><%= restaurant.res_type   %></span><br>
+       <span><%= restaurant.phone_number %></span><br>
+       <span><%= restaurant.price_range %></span><br>
+       <span><%= restaurant.hours %><br></span>
        <% end %>
      </div>
    </div>
  </div>
 </div>
 </div>
-
- <!-- <%# @r["businesses"].each do |r| %>
-<img class="image-post" src="<%#= r['image_url'] %>" alt=""><br>
-<%#= link_to  "#{r['name']}", restaurant_path(:id)  %><br>
-<%#= r["categories"][0]["title"] %>
-<%#= r['price'] %><br>
-<%#= r["location"]["display_address"] %><br>
-<%#= r["display_phone"] %><br>
-<%#= r["rating"] %><br>
-<%# end %> -->
-
-
-
-

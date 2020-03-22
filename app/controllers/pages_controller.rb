@@ -2,9 +2,9 @@ class PagesController < ApplicationController
 
 skip_before_action :verify_authenticity_token
 
-
   def home
-    @reviews = Review.all
+    #probably shoukdnt use a shuffle here? belongs in Vue/View
+    @reviews = Review.all.shuffle
 
     @user = current_user
   end
@@ -32,6 +32,5 @@ skip_before_action :verify_authenticity_token
 
   def show
     @review = Review.find(params[:id])
-
   end
 end
