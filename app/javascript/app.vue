@@ -9,7 +9,8 @@
               <div class="hero">
                 <h2> {{review.restaurant.name}} </h2>
                 <a :href="'/reviews/' + review.id"><img class="image-post" :src= "review.restaurant.picture" alt=""></a><br>
-                <span> {{review.restaurant.address}}</span> <br>
+                <span> {{review.restaurant.address.replace(/[\[\]']+/g,"").replace(/"/g,"")}}</span> <br>
+
                 <span> {{review.restaurant.price_range}}</span><br>
               </div>
 
@@ -48,14 +49,14 @@
                   </span><br>
 
                      <button v-if=" review.likes > 0" class="tips btn btn-danger" @click="unlikeReview(review)">
-                      unlike
+                      No tip
 
                      </button>
 
 
 
                      <button v-else-if="review.likes === 0" class="tips btn btn-primary" @click="likeReview(review)">
-                       Like
+                       Tip
 
                       </button>
 
@@ -75,8 +76,7 @@
 
       data() {
         return {
-          like: {},
-          unlike: {}
+
         }
       },
 
@@ -85,7 +85,6 @@
         likeReview(review){
 
           this.$http.put(`/pages/${review.id}/like`).then(res => {
-
 
                   if(res.body.voted_up){
                     review.likes += 1

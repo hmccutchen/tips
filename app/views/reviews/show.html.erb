@@ -1,14 +1,29 @@
 
-<h1><%= @review.restaurant.name %></h1>
-<p><%= @review.restaurant.address %></p><br>
-<p><%= @review.restaurant.phone_number %></p><br>
-<p><%= @review.restaurant.price_range %></p><br>
-<p><%= @review.restaurant.hours %></p><br>
-
-<h2><%= @review.title %></h2>
-<%= @review.clientele %><br>
-<%= @review.management %><br>
- <%= @review.team %><br>
- <%= @review.more_details %><br>
- <%= @review.shift_description %><br>
- <%= @review.rating %><br>
+<% @reviews.each do |review| %>
+ <h2><%= review.restaurant.name %></h2>
+ <p><%= review.restaurant.address %></p>
+ <span>Clientele: </span>
+ <% review.clientele.times do %>
+    <span class="star"> </span>
+    <% end %><br>
+    <span>Management: </span>
+  <% review.management.times do %>
+    <span class="star"></span>
+    <% end %><br>
+    <span>Team: </span>
+ <% review.team.times do %>
+ <span class="star"></span>
+ <% end %><br>
+ <% if review.more_details.present? %>
+ <span>Details: </span>
+ <% end %>
+ <span><%= review.more_details %></span><br>
+<% if review.shift_description.present? %>
+ <span>Description: </span>
+ <% end %>
+ <span><%= review.shift_description %></span><br>
+ <span>Rating: </span>
+ <% review.rating.times do %>
+ <span class="star"></span>
+ <% end %><br>
+ <% end %>
