@@ -12,14 +12,13 @@ Tippio is an app made for Restaurant employees specifically, Servers and bartend
 *  **Bootstrap** - Used to create responsive design with bootstraps grid system.
 * **Vue.js** - used for specific rails views with SSR, Reviews liking and unliking posts 
 # Gems
-* Bcrypt
 * Curb
 * better errors
 * acts as votable
 * devise
 * foreman
 * webpacker
-##  Link
+##  Link (old version)
 https://tippio.herokuapp.com/
 
 > [app is still in development, users can use the app without needing to create an account simply head to the login, username/password provided by default.]
