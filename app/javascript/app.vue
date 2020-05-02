@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-
+    <Search @filter-method="searchRestaurants" />
     <article class="container">
       <div class="row">
-        <div v-for= "review in new_reviews" :key="review.id">
+        <div v-for= "review in filterRestaurants" :key="review.id">
           <div class="col-md-12">
             <div class="card">
               <div class="hero">
                 <h2> {{review.restaurant.name}} </h2>
                 <a :href="'/reviews/' + review.id"><img class="image-post" :src= "review.restaurant.picture" alt=""></a><br>
-                <span> {{review.restaurant.address}}</span> <br>
+                <span> {{review.restaurant.address.replace(/[\[\]']+/g,"").replace(/"/g,"")}}</span> <br>
+
                 <span> {{review.restaurant.price_range}}</span><br>
               </div>
 
@@ -48,14 +49,14 @@
                   </span><br>
 
                      <button v-if=" review.likes > 0" class="tips btn btn-danger" @click="unlikeReview(review)">
-                      unlike
+                      No tip
 
                      </button>
 
 
 
                      <button v-else-if="review.likes === 0" class="tips btn btn-primary" @click="likeReview(review)">
-                       Like
+                       Tip
 
                       </button>
 
@@ -69,14 +70,17 @@
 </template>
 
   <script>
+    import Search from '../javascript/components/Search.vue';
 
     export default {
+      name: 'app',
+      components: { Search },
       props: ["new_reviews"],
 
       data() {
         return {
-          like: {},
-          unlike: {}
+          searchString: ''
+
         }
       },
 
@@ -85,7 +89,6 @@
         likeReview(review){
 
           this.$http.put(`/pages/${review.id}/like`).then(res => {
-
 
                   if(res.body.voted_up){
                     review.likes += 1
@@ -109,7 +112,30 @@
           }).catch(e => console.log(e))
         },
 
+        searchRestaurants(e){
+          this.searchString = e
+
+        }
+
       },
+
+      computed: {
+
+        filterRestaurants(searchString){
+          let reviews = this.new_reviews;
+          const filterString = this.searchString;
+
+          filterString.trim().toLowerCase();
+
+           reviews = reviews.filter((review)=> {
+            if(review.restaurant.name.toLowerCase().indexOf(filterString) !== -1){
+              return review;
+
+            }
+          })
+          return reviews
+        }
+      }
 
     }
 

@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    @reviews = Review.all.where(restaurant_id: @review.restaurant_id)
   end
 
   def new
