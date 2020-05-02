@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-
+    <Search @filter-method="searchRestaurants" />
     <article class="container">
       <div class="row">
-        <div v-for= "review in new_reviews" :key="review.id">
+        <div v-for= "review in filterRestaurants" :key="review.id">
           <div class="col-md-12">
             <div class="card">
               <div class="hero">
@@ -70,12 +70,16 @@
 </template>
 
   <script>
+    import Search from '../javascript/components/Search.vue';
 
     export default {
+      name: 'app',
+      components: { Search },
       props: ["new_reviews"],
 
       data() {
         return {
+          searchString: ''
 
         }
       },
@@ -108,7 +112,30 @@
           }).catch(e => console.log(e))
         },
 
+        searchRestaurants(e){
+          this.searchString = e
+
+        }
+
       },
+
+      computed: {
+
+        filterRestaurants(searchString){
+          let reviews = this.new_reviews;
+          const filterString = this.searchString;
+
+          filterString.trim().toLowerCase();
+
+           reviews = reviews.filter((review)=> {
+            if(review.restaurant.name.toLowerCase().indexOf(filterString) !== -1){
+              return review;
+
+            }
+          })
+          return reviews
+        }
+      }
 
     }
 
