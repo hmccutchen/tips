@@ -35,7 +35,8 @@ gem 'webpacker'
 gem 'devise', '~> 4.7.1'
 gem 'binding_of_caller', '~> 0.8.0'
 gem 'dotenv-rails'
-
+gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
+gem 'image_processing'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

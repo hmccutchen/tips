@@ -57,3 +57,4 @@ document.addEventListener('turbolinks:load', () => {
   })
   }
 })
+import "actiontext"
