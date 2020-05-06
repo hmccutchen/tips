@@ -1,7 +1,4 @@
 class ReviewsController < ApplicationController
-
-
-
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reviews = Review.all
@@ -17,7 +14,6 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
-
   def create
     @user = current_user
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -26,9 +22,9 @@ class ReviewsController < ApplicationController
     @user.reviews << @restaurant_review
 
     if @restaurant_review.save
-      redirect_to '/'
+      redirect_to "/"
     else
-      render 'new'
+      render "new"
     end
   end
 
