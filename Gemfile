@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 5.2.1', '>= 5.2.4.2'
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
@@ -35,7 +35,8 @@ gem 'webpacker'
 gem 'devise', '~> 4.7.1'
 gem 'binding_of_caller', '~> 0.8.0'
 gem 'dotenv-rails'
-
+gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
+gem 'image_processing'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
