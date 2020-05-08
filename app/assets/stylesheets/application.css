@@ -16,7 +16,12 @@
 
  *{
   font-family: 'Dosis', sans-serif;
+ }
 
+ html, body{
+  background-color: #1E2F39;
+  margin: 0;
+  padding: 0;
  }
 
  /* navbar styles*/

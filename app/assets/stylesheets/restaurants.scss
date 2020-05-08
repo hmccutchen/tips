@@ -39,9 +39,23 @@ padding-left: 15px;
   color: white;
   font-size: 20px;
 }
+
 .color{
   background-color: #1E2F39;
+  height:100vh;
 }
+
+  body{
+  // background-color: #1E2F39;
+  padding: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100vh;
+ }
+
 
 .search-bar{
 
