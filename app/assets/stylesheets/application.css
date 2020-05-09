@@ -16,8 +16,9 @@
 
  *{
   font-family: 'Dosis', sans-serif;
-
  }
+
+
 
  /* navbar styles*/
  .navbar{
@@ -26,7 +27,25 @@
   border-radius: 0px!important;
  }
 
+.scroll-circle{
+ width: 4%;
+height: 4%;
+content: url("arrows.png");
+opacity: 0.3;
+position: fixed;
+bottom:0;
+right: 12px;
+/*background-color: green;*/
+z-index:1;
+}
 
+.hidden-scroll{
+  display: none;
+}
+
+.scroll-circle:hover{
+  opacity: 0.7;
+}
 
 .navbar ul{
   display: flex;
@@ -58,13 +77,8 @@
 .card{
   display: flex;
   background-color: #34495e;
-
 }
 
-.card img{
-  padding-left: 20px;
-
-}
 
 .hero span{
   color:#ecf0f1 ;
@@ -88,9 +102,8 @@
 .card:after{
   content: " ";
   height: 1%;
-  width: 100%;
+  width: 97.3%;
   position: absolute;
-  top: 0;
   background-color: white;
 
 }

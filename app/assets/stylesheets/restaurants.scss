@@ -2,11 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+  body{
+  background-color: #1E2F39 !important;
+
+  padding: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100vh;
+ }
+
 .image-post{
  height: 255.867px;
  width: 455.283px;
-// padding-bottom: 71px;
-padding-left: 15px;
+// padding-left: 15px;
+left: 17px;
+top: 77px;
+}
+
+.image-post:hover{
+  border: solid 2px #e74c3c;
 }
 
 .restaurant{
@@ -14,7 +31,15 @@ padding-left: 15px;
   background-color: #34495e;
 
 }
+ .restaurant-name-link a:hover{
+  text-decoration: none;
+  color: #fcf9f9;
+ }
 
+ p.restaurant-name-link a{
+  font-size: 24px;
+  color: white;
+ }
 .restaurant h1{
   color: white;
   text-align: center;
@@ -30,30 +55,16 @@ padding-left: 15px;
   text-align: center;
 }
 
-.search-res a{
-  color: white;
-  font-size: 35px
-}
-
 .search-res span{
   color: white;
-  font-size: 20px;
+  font-size: 15px;
 }
-.color{
-  background-color: #1E2F39;
-}
+
 
 .search-bar{
+  padding-top: 10px;
 
-  padding-left: 41px;
-}
-
-.search-bar img{
-  width: 4%;
-  position: absolute;
-  left: 17px;
-  top: 77px;
-  padding-right: 11px;
+  // padding-left: 41px;
 }
 
 
@@ -79,9 +90,6 @@ input.eyeglass:hover{
   border-color: #AC4400;
 }
 
-.search-form{
-  padding-top: 10px;
-}
 
 .search-form form{
   margin-left: 28px;
