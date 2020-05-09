@@ -28,15 +28,23 @@
  }
 
 .scroll-circle{
- width: 5%;
-height: 8%;
-color: black;
-border-radius: 50%;
-border: solid;
+ width: 4%;
+height: 4%;
+content: url("arrows.png");
+opacity: 0.3;
 position: fixed;
 bottom:0;
 right: 12px;
-background-color: green;
+/*background-color: green;*/
+z-index:1;
+}
+
+.hidden-scroll{
+  display: none;
+}
+
+.scroll-circle:hover{
+  opacity: 0.7;
 }
 
 .navbar ul{
@@ -94,7 +102,7 @@ background-color: green;
 .card:after{
   content: " ";
   height: 1%;
-  width: 97%;
+  width: 97.3%;
   position: absolute;
   background-color: white;
 
