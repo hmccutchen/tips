@@ -1,26 +1,37 @@
 
-<div class="color">
-  <div class="search-bar">
-    <img src="search.png" alt="&">
-    <%= render 'search' %><br>
+
+
+
+  <div class="scroll-circle">
+
   </div>
 
 
   <div class="container">
+    <%= render 'search' %><br>
     <div class="row">
-      <div class="col-md-12 col-sm-12">
+      <% @restaurants.shuffle.each do |restaurant| %>
+      <div class="col-md-6 col-sm-12">
         <div class="search-res">
-         <% @restaurants.shuffle.each do |restaurant| %>
-         <h2><%= link_to "#{restaurant.name}", restaurant %></h2>
-         <a href="restaurants/<%= restaurant.id %>"><img class="image-post" src="<%= restaurant.picture  %>" alt=""></a> <br>
-         <span><%=p restaurant.address %></span><br>
+         <p class="restaurant-name-link"><%= link_to "#{restaurant.name}", restaurant %></p>
+         <a href="restaurants/<%= restaurant.id %>"><img class="image-post" src="<%= restaurant.picture  %>" alt="?No image?"></a> <br>
+         <span><%= restaurant.address %></span><br>
          <span><%= restaurant.res_type   %></span><br>
          <span><%= restaurant.phone_number %></span><br>
          <span><%= restaurant.price_range %></span><br>
          <span><%= restaurant.hours %><br></span>
-         <% end %>
        </div>
      </div>
+     <% end %>
    </div>
  </div>
-</div>
+
+
+<script>
+ const navBar = document.querySelector('.navbar');
+ const scrollCircle = document.querySelector('.scroll-circle');
+ scrollCircle.addEventListener('click',function(){
+
+  navBar.scrollIntoView({behavior: 'smooth', block: 'start'});
+ })
+</script>

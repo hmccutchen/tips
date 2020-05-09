@@ -18,11 +18,7 @@
   font-family: 'Dosis', sans-serif;
  }
 
- html, body{
-  background-color: #1E2F39;
-  margin: 0;
-  padding: 0;
- }
+
 
  /* navbar styles*/
  .navbar{
@@ -31,7 +27,17 @@
   border-radius: 0px!important;
  }
 
-
+.scroll-circle{
+ width: 5%;
+height: 8%;
+color: black;
+border-radius: 50%;
+border: solid;
+position: fixed;
+bottom:0;
+right: 12px;
+background-color: green;
+}
 
 .navbar ul{
   display: flex;
@@ -63,13 +69,8 @@
 .card{
   display: flex;
   background-color: #34495e;
-
 }
 
-.card img{
-  padding-left: 20px;
-
-}
 
 .hero span{
   color:#ecf0f1 ;
@@ -93,9 +94,8 @@
 .card:after{
   content: " ";
   height: 1%;
-  width: 100%;
+  width: 97%;
   position: absolute;
-  top: 0;
   background-color: white;
 
 }
