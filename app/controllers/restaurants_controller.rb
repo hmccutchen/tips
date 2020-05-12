@@ -7,10 +7,10 @@ class RestaurantsController < ApplicationController
       @results
     end
 
-    http = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
+    http_call = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
       http.headers["Authorization"] = "Bearer #{ENV['Yelp_Api_Key']}"
     end
-    restaurant_data = JSON.parse(http.body_str)
+    restaurant_data = JSON.parse(http_call.body_str)
 
     restaurant_data["businesses"].each do |restaurant|
       restaurant["image_url"]

@@ -2,9 +2,9 @@
 
 <div class="restaurant">
 <div class="container">
-<h1><%= @restaurant.name %></h1>
+<h2><%= @restaurant.name %></h2>
 <img class="image-post" src="<%=@restaurant.picture %>" alt="#"><br>
-<span><%= @restaurant.address %></span><br>
+<span><%= new_address_format(@restaurant.address) %></span><br>
 <span><%= @restaurant.res_type %></span><br>
 <span><%= @restaurant.phone_number %></span><br>
 <span><%= @restaurant.price_range %></span><br>

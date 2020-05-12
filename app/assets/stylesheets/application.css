@@ -39,7 +39,7 @@ right: 12px;
 z-index:1;
 }
 
-.hidden-scroll{
+.hide-scroll{
   display: none;
 }
 
@@ -59,6 +59,10 @@ z-index:1;
   margin-right: 20px;
   font-size: 23px;
   padding: 10px;
+}
+
+.navbar li:nth-child(3){
+  color: #ffdc64;
 }
 
 
