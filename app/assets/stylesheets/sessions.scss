@@ -53,54 +53,66 @@ input.login-btn:hover{
 
 .signup{
   text-align: center;
-  padding-top: 50px;
+  // padding-top: 50px;
   background-color: #F9FFF5;
 }
 
 
 form#new_user input{
   margin-top: 10px;
-  width:46%;
-  // border-radius: 5px;
+  width:26%;
   font-size: 20px;
 }
 
-// .signup:after{
-//   content: " ";
-//   background-color: #34495e;
-//   width: 50%;
-//   position: absolute;
-//   z-index: 0;
-//   height: 50%;
-//   top:0;
-
-// }
 
 
-#signup-title{
+.auth-title{
   background-color: #34495e;
   margin-top: -69px;
 
-height: 137px;
-}
-
-.container.form-con{
-  width: 724px;
+ height: 137px;
 }
 
 select#user_position{
   width: 46%;
 }
 
+main.log-in-form {
+  text-align: center;
 
+  label::before{
+    content: none;
+  }
+}
 
-#signup-title h1{
+  label.remember-me {
+    position: absolute;
+    right: 41%;
+    font-weight: normal;
+  }
+  div.field.container.form-con.log-in-form label{
+  position: absolute;
+  color:white;
+  margin-top: 6px;
+}
+
+.shared-signup{
   color: white;
+  font-size: 17px;
 
-margin-top: 18px;
+  &:hover{
+    color: #a63d32;
+    text-decoration: none;
+  }
+}
 
 
+h2.auth-title{
+color: white;
 
+margin-top: 0;
+
+text-align: center;
 padding-top: 37px;
 
 font-size: 52px;
