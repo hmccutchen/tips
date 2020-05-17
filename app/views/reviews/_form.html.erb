@@ -36,8 +36,6 @@
 
 <%= t.radio_button :management, 5, :id => "m5"  %><label id="mange5" for="star5" title="Excellent!">5 </label><br>
 
-
-<%= t.text_field :shift_description, placeholder: "Whats a shift like?" %><br>
  <h4>Rating:</h4>
 <%= t.radio_button :rating,1, :id =>"r1",:checked => true %><label id="rate1" for="star5" title="Very Poor!">1 </label>
 
@@ -46,8 +44,7 @@
 <%= t.radio_button :rating,4, :id =>"r4" %><label id="rate4" for="star5" title="Good!">4 </label>
 <%= t.radio_button :rating,5, :id =>"r5" %><label id="rate5" for="star5" title="Excellent!">5 </label><br>
 
-
-<%= t.text_field :more_details, placeholder: "anything else?" %><br>
+<%= t.rich_text_area :content, placeholder: "Details" %><br>
 <%= t.submit "submit", class: "btn btn primary" %>
 <% end %>
 
