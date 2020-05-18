@@ -1,4 +1,5 @@
 
+
 <%= form_for([@restaurant, @review]) do |t| %>
 <%= t.text_field :title, placeholder: "Title" %><br>
  <h4>Position: </h4>
@@ -36,6 +37,7 @@
 
 <%= t.radio_button :management, 5, :id => "m5"  %><label id="mange5" for="star5" title="Excellent!">5 </label><br>
 
+
  <h4>Rating:</h4>
 <%= t.radio_button :rating,1, :id =>"r1",:checked => true %><label id="rate1" for="star5" title="Very Poor!">1 </label>
 
@@ -44,9 +46,14 @@
 <%= t.radio_button :rating,4, :id =>"r4" %><label id="rate4" for="star5" title="Good!">4 </label>
 <%= t.radio_button :rating,5, :id =>"r5" %><label id="rate5" for="star5" title="Excellent!">5 </label><br>
 
+
 <%= t.rich_text_area :content, placeholder: "Details" %><br>
+
 <%= t.submit "submit", class: "btn btn primary" %>
+
 <% end %>
+
+
 
 <script>
 

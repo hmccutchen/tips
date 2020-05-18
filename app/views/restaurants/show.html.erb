@@ -1,22 +1,29 @@
 
 
-<div class="restaurant">
-<div class="container">
-<h2><%= @restaurant.name %></h2>
-<img class="image-post" src="<%=@restaurant.picture %>" alt="#"><br>
-<span><%= new_address_format(@restaurant.address) %></span><br>
-<span><%= @restaurant.res_type %></span><br>
-<span><%= @restaurant.phone_number %></span><br>
-<span><%= @restaurant.price_range %></span><br>
-<span><%= @restaurant.hours %></span>
-<%= link_to "Back", restaurants_path, class: "btn btn-lg back-button" %>
+
+<div class="container review-form">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h2><%= @restaurant.name %></h2>
+      <img class="image-post" src="<%=@restaurant.picture %>" alt="#"><br>
+      <span><%= new_address_format(@restaurant.address) %></span><br>
+      <span><%= @restaurant.res_type %></span><br>
+      <span><%= @restaurant.phone_number %></span><br>
+      <span><%= @restaurant.price_range %></span><br>
+      <span><%= @restaurant.hours %></span>
+      <%= link_to "Back", restaurants_path, class: "btn btn-lg back-button" %>
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+
+      <%= render 'reviews/form' %>
+    </div>
+  </div>
+
 </div>
 
 
 
-<div class="container rform">
 
 
-<%= render :partial => 'reviews/form' %>
-</div>
-</div>
+
