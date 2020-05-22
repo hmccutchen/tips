@@ -53,19 +53,22 @@ color: #f70;
 
 
 .back-button{
-  color: white;
-  margin-top: 10%;
-
+  color: #ce0e0e;
+  margin-top: 1%;
+  font-size: 46px;
+  margin-left: 20px;
 }
 
-.btn-group-lg > .btn, .btn-lg.back-button{
-  font-size: 22px;
+@keyframes backAnimation{
+  0% {right: 5px}
+  40%{right: 10px}
 
+  100%{right: 20px}
 }
 
-.btn.focus, .btn:focus, .btn.back-button:hover{
-
-  color: #E74C3C;
+.back-button:hover{
+  animation: backAnimation 0.4s infinite;
+  text-decoration: none;
 }
 
 

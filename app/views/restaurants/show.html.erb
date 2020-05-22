@@ -11,13 +11,13 @@
       <span><%= @restaurant.phone_number %></span><br>
       <span><%= @restaurant.price_range %></span><br>
       <span><%= @restaurant.hours %></span>
-      <%= link_to "Back", restaurants_path, class: "btn btn-lg back-button" %>
     </div>
 
     <div class="col-md-6 col-sm-12">
 
       <%= render 'reviews/form' %>
     </div>
+      <span><%= link_to "", restaurants_path,  class: "glyphicon glyphicon-chevron-left back-button" %></span>
   </div>
 
 </div>

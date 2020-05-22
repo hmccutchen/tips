@@ -191,13 +191,29 @@ input#review_more_details{
 form#new_review.new_review{
 /*margin-left: 43px;*/
 /*padding: 50px;*/
-text-align: center;
+font-size: 11px;
+margin-top: 62px;
+}
+
+trix-editor#review_content.trix-content{
+  font-size: 14px;
+}
+
+.review-submit-buttom{
+  bottom: 72px;
+left: -74%;
+
 }
 
 
 .review-form{
 background-color:#F9FCF1;
+margin-top: 29px;
 
+}
+
+.review-form .row{
+  margin-bottom: 10px;
 }
 .tips a{
   color: #16a085;
