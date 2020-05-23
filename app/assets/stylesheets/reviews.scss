@@ -45,12 +45,22 @@ input[type="radio"]:checked + label {
   color:#f70;
 }
 
+#review_role{
+  width: 35%;
 
+}
 
 input[type="radio"]:not(:checked) + label:hover{
 color: #f70;
 }
 
+.restaurant-review-title{
+position: absolute;
+top: 41px;
+font-size: 22px;
+font-weight: lighter;
+
+}
 
 .back-button{
   color: #ce0e0e;
@@ -62,7 +72,6 @@ color: #f70;
 @keyframes backAnimation{
   0% {right: 5px}
   40%{right: 10px}
-
   100%{right: 20px}
 }
 

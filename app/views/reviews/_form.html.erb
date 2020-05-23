@@ -3,9 +3,7 @@
 <%= form_for([@restaurant, @review]) do |t| %>
 <%= t.text_field :title, placeholder: "Title" %><br>
 
- <h4>Position: </h4>
-
- <%= t.select :role, [['Server'],['Bartender'],['Other']], :required => true %><br>
+ <%= t.select :role, [['Server'],['Bartender'],['Other']], :required => true, :prompt => "choose position" %><br>
 
 <%= t.number_field :tip_avg, placeholder: "Tip average/Hr", :required => true %><br>
   <h4>Clientele:</h4>

@@ -98,7 +98,7 @@ z-index:1;
   width:50%;
   margin-left: 20%;
   color: #ecf0f1;
-  font-weight: lighter;
+ /* font-weight: normal;*/
   font-size: 17px;
   padding-bottom: 5px;
 }
@@ -189,8 +189,6 @@ input#review_more_details{
 }
 
 form#new_review.new_review{
-/*margin-left: 43px;*/
-/*padding: 50px;*/
 font-size: 11px;
 margin-top: 62px;
 }

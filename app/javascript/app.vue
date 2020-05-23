@@ -16,32 +16,32 @@
 
 
               <div class=info>
-                  <span class="rtitle"><b>{{review.title.charAt(0).toUpperCase() + review.title.slice(1)}}</b></span><br>
-                  <span><b>Role:</b>
+                  <span class="rtitle restaurant-review-title"><b>{{review.title.charAt(0).toUpperCase() + review.title.slice(1)}}</b></span><br>
+                  <span>Role:
                   {{review.role}}
                   </span><br>
-                  <span><b>Clientele:</b>
+                  <span>Clientele:
                   </span><br>
                   <span v-for="star in review.clientele">
                     <span class="star">
                     </span>
                   </span><br>
-                  <span><b>Team:</b>
+                  <span>Team:
                   </span><br>
                   <span v-for="star in review.team">
                     <span class="star">
                     </span>
                   </span> <br>
-                  <span><b>Management:</b>
+                  <span>Management:
                   </span><br>
                   <span v-for= "star in  review.management">
                     <span class="star">
                     </span>
                   </span> <br>
-                  <span><b>Tip Avg: </b>
+                  <span>Tip Avg:
                   </span>
                   {{review.tip_avg}} /hr<br>
-                  <span><b>Overall Rating:</b>
+                  <span>Overall Rating:
                   </span><br>
                   <span v-for="star in review.rating">
                     <span class="star">
@@ -49,14 +49,14 @@
                   </span><br>
 
                      <button v-if=" review.likes > 0" class="tips btn btn-danger" @click="unlikeReview(review)">
-                      No tip
+                      Remove like
 
                      </button>
 
 
 
                      <button v-else-if="review.likes === 0" class="tips btn btn-primary" @click="likeReview(review)">
-                       Tip
+                        like
 
                       </button>
 
