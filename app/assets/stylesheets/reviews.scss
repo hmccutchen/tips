@@ -45,27 +45,39 @@ input[type="radio"]:checked + label {
   color:#f70;
 }
 
+#review_role{
+  width: 35%;
 
+}
 
 input[type="radio"]:not(:checked) + label:hover{
 color: #f70;
 }
 
+.restaurant-review-title{
+position: absolute;
+top: 41px;
+font-size: 22px;
+font-weight: lighter;
+
+}
 
 .back-button{
-  color: white;
-  margin-top: 10%;
-
+  color: #ce0e0e;
+  margin-top: 1%;
+  font-size: 46px;
+  margin-left: 20px;
 }
 
-.btn-group-lg > .btn, .btn-lg.back-button{
-  font-size: 22px;
-
+@keyframes backAnimation{
+  0% {right: 5px}
+  40%{right: 10px}
+  100%{right: 20px}
 }
 
-.btn.focus, .btn:focus, .btn.back-button:hover{
-
-  color: #E74C3C;
+.back-button:hover{
+  animation: backAnimation 0.4s infinite;
+  text-decoration: none;
 }
 
 

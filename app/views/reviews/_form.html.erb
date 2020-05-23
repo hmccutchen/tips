@@ -1,8 +1,10 @@
 
+
 <%= form_for([@restaurant, @review]) do |t| %>
 <%= t.text_field :title, placeholder: "Title" %><br>
- <h4>Position: </h4>
-<%= t.select :role, [['Server'],['Bartender'],['Other']], :required => true %><br>
+
+ <%= t.select :role, [['Server'],['Bartender'],['Other']], :required => true, :prompt => "choose position" %><br>
+
 <%= t.number_field :tip_avg, placeholder: "Tip average/Hr", :required => true %><br>
   <h4>Clientele:</h4>
 <%= t.radio_button :clientele, 1, :id => "1" , :checked => true %><label id="clientele1" for="star1" title=" very Poor!">1 </label>
@@ -37,7 +39,6 @@
 <%= t.radio_button :management, 5, :id => "m5"  %><label id="mange5" for="star5" title="Excellent!">5 </label><br>
 
 
-<%= t.text_field :shift_description, placeholder: "Whats a shift like?" %><br>
  <h4>Rating:</h4>
 <%= t.radio_button :rating,1, :id =>"r1",:checked => true %><label id="rate1" for="star5" title="Very Poor!">1 </label>
 
@@ -47,9 +48,13 @@
 <%= t.radio_button :rating,5, :id =>"r5" %><label id="rate5" for="star5" title="Excellent!">5 </label><br>
 
 
-<%= t.text_field :more_details, placeholder: "anything else?" %><br>
-<%= t.submit "submit", class: "btn btn primary" %>
+<%= t.rich_text_area :content, placeholder: "Add Details" %>
+
+<%= t.submit "submit", class: "btn btn primary review-submit-buttom" %>
+
 <% end %>
+
+
 
 <script>
 

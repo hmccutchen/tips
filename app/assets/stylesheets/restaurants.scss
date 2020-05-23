@@ -20,17 +20,13 @@
 object-fit: cover;
 left: 17px;
 top: 77px;
-}
-
-.image-post:hover{
-  border: solid 2px #e74c3c;
+box-shadow: 1px 1px 4px -1px black;
 }
 
 .restaurant{
-  display: flex;
   background-color: #34495e;
-
 }
+
  .restaurant-name-link a:hover{
   text-decoration: none;
   color: #fcf9f9;

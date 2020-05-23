@@ -1,29 +1,32 @@
 
-<% @reviews.each do |review| %>
- <h2><%= review.restaurant.name %></h2>
- <p><%= review.restaurant.address %></p>
- <span>Clientele: </span>
- <% review.clientele.times do %>
-    <span class="star"> </span>
-    <% end %><br>
-    <span>Management: </span>
-  <% review.management.times do %>
-    <span class="star"></span>
-    <% end %><br>
-    <span>Team: </span>
- <% review.team.times do %>
- <span class="star"></span>
- <% end %><br>
- <% if review.more_details.present? %>
- <span>Details: </span>
- <% end %>
- <span><%= review.more_details %></span><br>
-<% if review.shift_description.present? %>
- <span>Description: </span>
- <% end %>
- <span><%= review.shift_description %></span><br>
- <span>Rating: </span>
- <% review.rating.times do %>
- <span class="star"></span>
- <% end %><br>
- <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <img class="image-post" src="<%=@review.restaurant.picture %>" alt="#"><br>
+      <h2><%= @review.restaurant.name %></h2>
+      <p><%= @review.restaurant.address %></p>
+      <span>Clientele: </span>
+      <% @review.clientele.times do %>
+      <span class="star"> </span>
+      <% end %><br>
+      <span>Management: </span>
+      <% @review.management.times do %>
+      <span class="star"></span>
+      <% end %><br>
+      <span>Team: </span>
+      <% @review.team.times do %>
+      <span class="star"></span>
+      <% end %><br>
+      <% if @review.more_details.present? %>
+      <span>Details: </span>
+      <% end %>
+      <span><%= sanitize @review.more_details %></span><br>
+      <span><%= @review.shift_description %></span><br>
+      <span>Rating: </span>
+      <% @review.rating.times do %>
+      <span class="star"></span>
+      <% end %><br>
+    </div>
+  </div>
+</div>
+
