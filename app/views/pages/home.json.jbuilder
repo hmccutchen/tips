@@ -11,6 +11,7 @@ json.reviews @reviews.each do |review|
    json.role review.role
    json.rating review.rating
 
+
    json.voted_up @user.voted_up_on? review if @user.present?
    json.voted_down @user.voted_down_on? review if @user.present?
 puts "this is the home page json stuff"

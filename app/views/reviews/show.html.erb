@@ -20,8 +20,7 @@
       <% if @review.more_details.present? %>
       <span>Details: </span>
       <% end %>
-      <span><%= sanitize @review.more_details %></span><br>
-      <span><%= @review.shift_description %></span><br>
+      <span><%= @review.content %></span><br>
       <span>Rating: </span>
       <% @review.rating.times do %>
       <span class="star"></span>
