@@ -7,14 +7,14 @@
 
 <%= t.number_field :tip_avg, placeholder: "Tip average/Hr", :required => true %><br>
   <h4>Clientele:</h4>
-<%= t.radio_button :clientele, 1, :id => "1" , :checked => true %><label id="clientele1" for="star1" title=" very Poor!">1 </label>
+<%= t.radio_button :clientele, 1, :id => "1", class: "clientele_star" %><label id="clientele1" for="star1" title=" very Poor!">1 </label>
 
-<%= t.radio_button :clientele, 2, :id=> "2"  %><label id="clientele2"  for="star2" title="Poor!">2 </label>
+<%= t.radio_button :clientele, 1, :id=> "2", class: "clientele_star"  %><label id="clientele2"  for="star2" title="Poor!">2 </label>
 
-<%= t.radio_button :clientele, 3, :id=> "3"  %><label id="clientele3" for="star3" title="Average!">3 </label>
+<%= t.radio_button :clientele, 1, :id=> "3", class: "clientele_star"  %><label id="clientele3" for="star3" title="Average!">3 </label>
 
-<%= t.radio_button :clientele, 4, :id=> "4"  %><label id="clientele4" for="star4" title="Good!">4 </label>
-<%= t.radio_button :clientele,5, :id=> "5"  %><label id="clientele5" for="star5" title="Excellent!">5 </label><br>
+<%= t.radio_button :clientele, 1, :id=> "4", class: "clientele_star"  %><label id="clientele4" for="star4" title="Good!">4 </label>
+<%= t.radio_button :clientele, 1, :id=> "5", class: "clientele_star"  %><label id="clientele5" for="star5" title="Excellent!">5 </label><br>
 
 
  <h4>Team:</h4>
@@ -58,20 +58,23 @@
 
 <script>
 
-  c1 = document.getElementById("clientele1");
-  c1.addEventListener("click", function(){document.getElementById("1").checked = true;})
-  c2 = document.getElementById("clientele2");
-  c2.addEventListener("click", function(){document.getElementById("2").checked = true;})
-  c3 = document.getElementById("clientele3");
-  c3.addEventListener("click", function(){document.getElementById("3").checked = true;})
-  c4 = document.getElementById("clientele4");
-  c4.addEventListener("click", function(){document.getElementById("4").checked = true;})
+  // c1 = document.getElementById("clientele1");
+  // c1.addEventListener("click", function(){document.getElementById("1").checked = true;})
+  // c2 = document.getElementById("clientele2");
+  // c2.addEventListener("click", function(){document.getElementById("2").checked = true;})
+  // c3 = document.getElementById("clientele3");
+  // c3.addEventListener("click", function(){document.getElementById("3").checked = true;})
+  // c4 = document.getElementById("clientele4");
+  // c4.addEventListener("click", function(){document.getElementById("4").checked = true;})
 
-  c5 = document.getElementById("clientele5");
-  c5.addEventListener("click", function(){document.getElementById("5").checked = true;
-})
+  // c5 = document.getElementById("clientele5");
+  // c5.addEventListener("click", function(){document.getElementById("5").checked = true;
+// })
 
 
+
+  clientele = document.querySelectorAll("clientele_star");
+  console.log(clientele);
 
 
   team = document.getElementById("team1");
