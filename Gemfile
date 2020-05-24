@@ -38,6 +38,7 @@ gem 'dotenv-rails'
 gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
 gem 'image_processing'
 gem 'ratyrate'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
