@@ -1,10 +1,14 @@
 
-<div class="container">
+<div class="container review-form">
   <div class="row">
-    <div class="col-md-12">
-      <img class="image-post" src="<%=@review.restaurant.picture %>" alt="#"><br>
+    <div class="col-md-6 col-sm-12">
       <h2><%= @review.restaurant.name %></h2>
-      <p><%= @review.restaurant.address %></p>
+      <img class="image-post" src="<%=@review.restaurant.picture %>" alt="#"><br>
+      <span><%= new_address_format(@review.restaurant.address)%></span><br>
+    <span><%= link_to "", root_path,  class: "glyphicon glyphicon-circle-arrow-left back-button" %></span>
+    </div>
+
+    <div class="col-md-6 col-sm-12 review-details">
       <span>Clientele: </span>
       <% @review.clientele.times do %>
       <span class="star"> </span>
@@ -22,10 +26,14 @@
       <% end %>
       <span><%= @review.content %></span><br>
       <span>Rating: </span>
-      <% @review.rating.times do %>
+      <% @review.rating.try(:times) do %>
       <span class="star"></span>
       <% end %><br>
     </div>
+
   </div>
 </div>
+
+
+
 

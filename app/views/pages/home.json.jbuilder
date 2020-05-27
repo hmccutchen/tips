@@ -12,8 +12,7 @@ json.reviews @reviews.each do |review|
    json.rating review.rating
 
 
-   json.voted_up @user.voted_up_on? review if @user.present?
-   json.voted_down @user.voted_down_on? review if @user.present?
+   puts json.voted_up @user.voted_up_on? review if @user.present?
 puts "this is the home page json stuff"
    json.likes review.get_likes.size
   json.user_voted @user.voted_for? review if @user.present?

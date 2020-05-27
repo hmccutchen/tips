@@ -46,19 +46,20 @@
                   <span v-for="star in review.rating">
                     <span class="star">
                     </span>
+
                   </span><br>
 
-                     <button v-if=" review.likes > 0" class="tips btn btn-danger" @click="unlikeReview(review)">
+                     <button v-if="review.voted_up" class="tips btn btn-danger" @click="unlikeReview(review)">
                       Remove like
 
                      </button>
 
 
-
-                     <button v-else-if="review.likes === 0" class="tips btn btn-primary" @click="likeReview(review)">
+                     <button v-else-if="review.voted_up === false" class="tips btn btn-primary" @click="likeReview(review)">
                         like
-
                       </button>
+
+                      <span>likes: {{review.likes}}</span>
 
               </div>
             </div>
@@ -79,7 +80,7 @@
 
       data() {
         return {
-          searchString: ''
+          searchString: '',
 
         }
       },
@@ -94,6 +95,11 @@
                     review.likes += 1
                   }
 
+
+                  review.voted_up = res.body.voted_up
+
+                  // console.log(res.body)
+
           }).catch(e => console.log(e))
         },
 
@@ -105,9 +111,9 @@
              if(res.body.voted_down === false){
               review.likes -= 1
                   }
-
-
-
+                    this.voted_up = res.body.voted_up
+                       // console.log(res.body)
+                        review.voted_up = res.body.voted_up
 
           }).catch(e => console.log(e))
         },
