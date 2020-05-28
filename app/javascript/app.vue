@@ -9,7 +9,7 @@
               <div class="hero">
                 <h2> {{review.restaurant.name}} </h2>
                 <a :href="'/reviews/' + review.id"><img class="image-post" :src= "review.restaurant.picture" alt=""></a><br>
-                <span> {{review.restaurant.address.replace(/[\[\]']+/g,"").replace(/"/g,"")}}</span> <br>
+                <span class="address-font"> {{review.restaurant.address.replace(/[\[\]']+/g,"").replace(/"/g,"")}}</span> <br>
 
                 <span> {{review.restaurant.price_range}}</span><br>
               </div>
@@ -23,19 +23,19 @@
                   <span>Clientele:
                   </span><br>
                   <span v-for="star in review.clientele">
-                    <span class="star">
+                    <span class="stars">
                     </span>
                   </span><br>
                   <span>Team:
                   </span><br>
                   <span v-for="star in review.team">
-                    <span class="star">
+                    <span class="stars">
                     </span>
                   </span> <br>
                   <span>Management:
                   </span><br>
                   <span v-for= "star in  review.management">
-                    <span class="star">
+                    <span class="stars">
                     </span>
                   </span> <br>
                   <span>Tip Avg:
@@ -44,7 +44,7 @@
                   <span>Overall Rating:
                   </span><br>
                   <span v-for="star in review.rating">
-                    <span class="star">
+                    <span class="stars">
                     </span>
 
                   </span><br>

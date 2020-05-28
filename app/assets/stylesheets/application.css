@@ -14,14 +14,16 @@
  *= require_self
  */
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
+/*@import "font-awesome-sprockets";
+@import "font-awesome";*/
 
  *{
   font-family: 'Dosis', sans-serif;
  }
 
-
+.address-font{
+  font-size: 1.4em;
+}
 
  /* navbar styles*/
  .navbar{

@@ -7,45 +7,66 @@
 
 <%= t.number_field :tip_avg, placeholder: "Tip average/Hr", :required => true %><br>
   <h4>Clientele:</h4>
-<%= t.radio_button :clientele, 1, :id => "1"  %><label id="clientele1" for="star1" title=" very Poor!">1 </label>
 
-<%= t.radio_button :clientele, 2, :id=> "2"  %><label id="clientele2"  for="star2" title="Poor!">2 </label>
+<div class="container star-content">
 
-<%= t.radio_button :clientele, 3, :id=> "3"  %><label id="clientele3" for="star3" title="Average!">3 </label>
 
-<%= t.radio_button :clientele, 4, :id=> "4"  %><label id="clientele4" for="star4" title="Good!">4 </label>
-<%= t.radio_button :clientele,5, :id=> "5"  %><label id="clientele5" for="star5" title="Excellent!">5 </label><br>
+<%= t.radio_button :clientele,5, :id=> "5", :class => "star"  %><label id="clientele5" class="star" for="star5" title="Excellent!"></label><br>
+<%= t.radio_button :clientele, 4, :id=> "4", :class => "star"  %><label id="clientele4" class="star" for="star4" title="Good!"></label>
+<%= t.radio_button :clientele, 3, :id=> "3", :class => "star"  %><label id="clientele3" class="star" for="star3" title="Average!"></label>
+<%= t.radio_button :clientele, 2, :id=> "2", :class => "star"  %><label id="clientele2" class="star"  for="star2" title="Poor!"> </label>
+<%= t.radio_button :clientele, 1, :id => "1", :class => "star" ,:checked => true  %><label id="clientele1" class="star"  for="star1" title=" very Poor!"> </label>
+
+</div>
+
+
 
 
  <h4>Team:</h4>
-<%= t.radio_button :team, 1, :id =>  "t1"%><label id="team1" for="star1" title=" very Poor!">1 </label>
 
-<%= t.radio_button :team, 2, :id =>  "t2" %><label id="team2" for="star2" title="Poor!">2 </label>
+ <div class="container star-content">
 
-<%= t.radio_button :team, 3, :id =>  "t3" %><label id="team3" for="star3" title="average!">3 </label>
-<%= t.radio_button :team, 4, :id =>  "t4" %><label id="team4" for="star4" title="Good!">4 </label>
-<%= t.radio_button :team, 5, :id =>  "t5" %><label id="team5" for="star5" title="Excellent!">5 </label><br>
+<%= t.radio_button :team, 5, :id =>  "t5", :class => "star-2" %><label id="team5" class="star-2" for="star5" title="Excellent!"></label><br>
+<%= t.radio_button :team, 4, :id =>  "t4", :class => "star-2" %><label id="team4" class="star-2" for="star4" title="Good!"> </label>
+<%= t.radio_button :team, 3, :id =>  "t3", :class => "star-2" %><label id="team3" class="star-2" for="star3" title="average!"> </label>
+<%= t.radio_button :team, 2, :id =>  "t2", :class => "star-2" %><label id="team2" class="star-2" for="star2" title="Poor!"> </label>
+<%= t.radio_button :team, 1, :id =>  "t1", :class => "star-2", :checked => true %><label id="team1" class="star-2" for="star1" title=" very Poor!"> </label>
+
+ </div>
+
+
 
 
  <h4>Management:</h4>
-<%= t.radio_button :management, 1, :id =>  "m1"  %><label id="mange1" for="star5" title="Very Poor!">1 </label>
+<div class="container star-content">
 
-<%= t.radio_button :management, 2, :id => "m2"  %><label id="mange2" for="star5" title="Poor!">2 </label>
 
-<%= t.radio_button :management, 3, :id => "m3"  %><label id="mange3" for="star5" title="Average!">3 </label>
+<%= t.radio_button :management, 5, :id => "m5", :class => "star-3"  %><label id="mange5" class="star-3" for="star5" title="Excellent!"> </label><br>
+<%= t.radio_button :management, 4, :id => "m4", :class => "star-3"  %><label id="mange4" class="star-3" for="star5" title="Good!"> </label>
+<%= t.radio_button :management, 3, :id => "m3", :class => "star-3"  %><label id="mange3" class="star-3" for="star5" title="Average!"></label>
+<%= t.radio_button :management, 2, :id => "m2", :class => "star-3"  %><label id="mange2" class="star-3" for="star5" title="Poor!"></label>
 
-<%= t.radio_button :management, 4, :id => "m4"  %><label id="mange4" for="star5" title="Good!">4 </label>
+<%= t.radio_button :management, 1, :id =>  "m1", :class => "star-3", :checked => true  %><label id="mange1" class="star-3" for="star5" title="Very Poor!"> </label>
+</div>
 
-<%= t.radio_button :management, 5, :id => "m5"  %><label id="mange5" for="star5" title="Excellent!">5 </label><br>
+
+
+
 
 
  <h4>Rating:</h4>
-<%= t.radio_button :rating,1, :id =>"r1" %><label id="rate1" for="star5" title="Very Poor!">1 </label>
 
-<%= t.radio_button :rating,2, :id =>"r2" %><label id="rate2" for="star5" title="Poor!">2 </label>
-<%= t.radio_button :rating,3, :id =>"r3" %><label id="rate3" for="star5" title="Average!">3 </label>
-<%= t.radio_button :rating,4, :id =>"r4" %><label id="rate4" for="star5" title="Good!">4 </label>
-<%= t.radio_button :rating,5, :id =>"r5" %><label id="rate5" for="star5" title="Excellent!">5 </label><br>
+
+
+<div class="container star-content">
+
+<%= t.radio_button :rating,5, :id =>"r5", :class => "star-4" %><label id="rate5" class="star-4" for="star5" title="Excellent!"> </label>
+<%= t.radio_button :rating,4, :id =>"r4", :class => "star-4" %><label id="rate4" class="star-4" for="star5" title="Good!"> </label>
+<%= t.radio_button :rating,3, :id =>"r3", :class => "star-4" %><label id="rate3" class="star-4" for="star5" title="Average!"> </label>
+<%= t.radio_button :rating,2, :id =>"r2", :class => "star-4" %><label id="rate2" class="star-4" for="star5" title="Poor!"> </label>
+<%= t.radio_button :rating,1, :id =>"r1", :class => "star-4", :checked => true %><label id="rate1" class="star-4" for="star5" title="Very Poor!"> </label><br/>
+</div>
+
 
 
 <%= t.rich_text_area :content, placeholder: "Add Details" %>
@@ -125,3 +146,4 @@
 })
 
 </script>
+
