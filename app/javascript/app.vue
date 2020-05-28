@@ -9,7 +9,7 @@
               <div class="hero">
                 <h2> {{review.restaurant.name}} </h2>
                 <a :href="'/reviews/' + review.id"><img class="image-post" :src= "review.restaurant.picture" alt=""></a><br>
-                <span> {{review.restaurant.address.replace(/[\[\]']+/g,"").replace(/"/g,"")}}</span> <br>
+                <span class="address-font"> {{review.restaurant.address.replace(/[\[\]']+/g,"").replace(/"/g,"")}}</span> <br>
 
                 <span> {{review.restaurant.price_range}}</span><br>
               </div>
@@ -23,19 +23,19 @@
                   <span>Clientele:
                   </span><br>
                   <span v-for="star in review.clientele">
-                    <span class="star">
+                    <span class="stars">
                     </span>
                   </span><br>
                   <span>Team:
                   </span><br>
                   <span v-for="star in review.team">
-                    <span class="star">
+                    <span class="stars">
                     </span>
                   </span> <br>
                   <span>Management:
                   </span><br>
                   <span v-for= "star in  review.management">
-                    <span class="star">
+                    <span class="stars">
                     </span>
                   </span> <br>
                   <span>Tip Avg:
@@ -44,21 +44,22 @@
                   <span>Overall Rating:
                   </span><br>
                   <span v-for="star in review.rating">
-                    <span class="star">
+                    <span class="stars">
                     </span>
+
                   </span><br>
 
-                     <button v-if=" review.likes > 0" class="tips btn btn-danger" @click="unlikeReview(review)">
+                     <button v-if="review.voted_up" class="tips btn btn-danger" @click="unlikeReview(review)">
                       Remove like
 
                      </button>
 
 
-
-                     <button v-else-if="review.likes === 0" class="tips btn btn-primary" @click="likeReview(review)">
+                     <button v-else-if="review.voted_up === false" class="tips btn btn-primary" @click="likeReview(review)">
                         like
-
                       </button>
+
+                      <span>likes: {{review.likes}}</span>
 
               </div>
             </div>
@@ -79,7 +80,7 @@
 
       data() {
         return {
-          searchString: ''
+          searchString: '',
 
         }
       },
@@ -94,6 +95,11 @@
                     review.likes += 1
                   }
 
+
+                  review.voted_up = res.body.voted_up
+
+                  // console.log(res.body)
+
           }).catch(e => console.log(e))
         },
 
@@ -105,9 +111,9 @@
              if(res.body.voted_down === false){
               review.likes -= 1
                   }
-
-
-
+                    this.voted_up = res.body.voted_up
+                       // console.log(res.body)
+                        review.voted_up = res.body.voted_up
 
           }).catch(e => console.log(e))
         },

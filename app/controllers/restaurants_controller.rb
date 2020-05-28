@@ -1,11 +1,8 @@
 class RestaurantsController < ApplicationController
   def index
-    @results = params[:search]
+    @results = params[:search] || nil
 
-    if @results == nil
-    else
-      @results
-    end
+
 
     http_call = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
       http.headers["Authorization"] = "Bearer #{ENV['Yelp_Api_Key']}"
@@ -26,6 +23,7 @@ class RestaurantsController < ApplicationController
     end
 
     @restaurants = Restaurant.where(Restaurant.arel_table[:name].lower.matches("%#{@results}%"))
+    @restaurants ||= Restaurant.all
   end
 
   def new

@@ -1,32 +1,39 @@
 
-<div class="container">
+<div class="container review-form">
   <div class="row">
-    <div class="col-md-12">
-      <img class="image-post" src="<%=@review.restaurant.picture %>" alt="#"><br>
+    <div class="col-md-6 col-sm-12">
       <h2><%= @review.restaurant.name %></h2>
-      <p><%= @review.restaurant.address %></p>
+      <img class="image-post" src="<%=@review.restaurant.picture %>" alt="#"><br>
+      <span class="address-font"><%= new_address_format(@review.restaurant.address)%></span><br>
+    <span><%= link_to "", root_path,  class: "glyphicon glyphicon-circle-arrow-left back-button" %></span>
+    </div>
+
+    <div class="col-md-6 col-sm-12 review-details">
       <span>Clientele: </span>
       <% @review.clientele.times do %>
-      <span class="star"> </span>
+      <span class="stars"> </span>
       <% end %><br>
       <span>Management: </span>
       <% @review.management.times do %>
-      <span class="star"></span>
+      <span class="stars"></span>
       <% end %><br>
       <span>Team: </span>
       <% @review.team.times do %>
-      <span class="star"></span>
+      <span class="stars"></span>
       <% end %><br>
       <% if @review.more_details.present? %>
       <span>Details: </span>
       <% end %>
-      <span><%= sanitize @review.more_details %></span><br>
-      <span><%= @review.shift_description %></span><br>
       <span>Rating: </span>
-      <% @review.rating.times do %>
-      <span class="star"></span>
+      <% @review.rating.try(:times) do %>
+      <span class="stars"></span>
       <% end %><br>
+      <span><%= @review.content %></span><br>
     </div>
+
   </div>
 </div>
+
+
+
 

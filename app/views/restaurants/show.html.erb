@@ -6,20 +6,19 @@
     <div class="col-md-6 col-sm-12">
       <h2><%= @restaurant.name %></h2>
       <img class="image-post" src="<%=@restaurant.picture %>" alt="#"><br>
-      <span><%= new_address_format(@restaurant.address) %></span><br>
-      <span><%= @restaurant.res_type %></span><br>
-      <span><%= @restaurant.phone_number %></span><br>
-      <span><%= @restaurant.price_range %></span><br>
-      <span><%= @restaurant.hours %></span>
+      <span class="address-font"><%= new_address_format(@restaurant.address) %></span><br>
+      <span class="address-font"><%= @restaurant.res_type %></span><br>
+      <span class="address-font"><%= @restaurant.phone_number %></span><br>
+      <span class="address-font"><%= @restaurant.price_range %></span><br>
+      <span class="address-font"><%= @restaurant.hours %></span>
     </div>
 
     <div class="col-md-6 col-sm-12">
 
       <%= render 'reviews/form' %>
     </div>
-      <span><%= link_to "", restaurants_path,  class: "glyphicon glyphicon-chevron-left back-button" %></span>
+    <span><%= link_to "", restaurants_path,  class: "glyphicon glyphicon-circle-arrow-left back-button" %></span>
   </div>
-
 </div>
 
 

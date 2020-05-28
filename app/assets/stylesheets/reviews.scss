@@ -2,16 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-input[type="radio"] {
-  display:none;
-}
 
 .rtitle{
 font-size: 20px;
 
 }
 
- label:before {
+.review-details{
+  font-size: 22px;
+  margin-top: 58px;
+}
+
+label.star{
+  color: #444;
+}
+
+.stars:before{
+  content: '★';
+  color: #FD4;
+  font-size:17px;
+}
+
+ label.star:before {
 
  content: '★ ';
  font-size: 20px;
@@ -19,39 +31,101 @@ font-size: 20px;
 }
 
 
-.star:after{
- content: '★ ';
- color: #f70;
+input[type="radio"] {
+  display:none;
 }
 
-.gif-image{
-  // background-image:url("http://cdn.lowgif.com/small/02827829fd94530b-space-flat-buscar-con-google-tank-think-pinterest-color-pick.gif");
-border-radius: 50%;
-background-repeat: no-repeat;
-width:23px;
-position: absolute;
-z-index: 1;
-top: 40px;
-left: 10px;
-height: 22px;
+input.star:checked ~ label.star:before {
+  content: '★';
+  color: #FD4!important;
+}
+
+
+label.star-2{
+  color: #444;
+}
+
+
+ label.star-2:before {
+
+ content: '★ ';
+ font-size: 20px;
+// color: #444
+}
+
+
+input[type="radio"] {
+  display:none;
+}
+
+input.star-2:checked ~ label.star-2:before {
+  content: '★';
+  color: #FD4!important;
+}
+
+label.star-3{
+  color: #444;
+}
+
+
+ label.star-3:before {
+
+ content: '★ ';
+ font-size: 20px;
+// color: #444
+}
+
+
+input.star-3:checked ~ label.star-3:before {
+  content: '★';
+  color: #FD4!important;
+}
+
+
+.star-content{
+  display: flex;
+flex-direction: row-reverse;
+justify-content: flex-end;
+max-width: 541px;
+position: relative;
+left: -10px;
+}
+
+label.star-4{
+  color: #444;
+}
+
+
+ label.star-4:before {
+
+ content: '★ ';
+ font-size: 20px;
+// color: #444
+}
+
+
+input.star-4:checked ~ label.star-4:before {
+  content: '★';
+  color: #FD4!important;
+}
+
+
+// input[type="radio"]:checked ~ label.star:after {
+//   color:#f70;
+//   content: '★'
+// }
+
+input[type="radio"]:not(:checked) + label:hover{
+color: #FD4;
 }
 
 .tips a:visited{
   color: #f1c40f;
 }
 
-
-input[type="radio"]:checked + label {
-  color:#f70;
-}
-
 #review_role{
   width: 35%;
 
-}
-
-input[type="radio"]:not(:checked) + label:hover{
-color: #f70;
 }
 
 .restaurant-review-title{
@@ -68,6 +142,8 @@ font-weight: lighter;
   font-size: 46px;
   margin-left: 20px;
 }
+
+
 
 @keyframes backAnimation{
   0% {right: 5px}

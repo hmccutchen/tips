@@ -2,8 +2,8 @@
 
 
 
-  <div class="scroll-circle hide-scroll">
-
+  <div class="scroll-circle">
+  <span onclick="scrollUp()" class="glyphicon glyphicon-circle-arrow-up"></span>
   </div>
 
 
@@ -29,12 +29,30 @@
 
 
 <script>
-  let scrollCircle = document.querySelector('.scroll-circle');
-  scrollCircle.classList.remove("hide-scroll");
-  scrollCircle.addEventListener('click',function(){
+
+ function scrollUp(){
+
   let navBar = document.querySelector('.navbar');
   navBar.scrollIntoView({behavior: 'smooth', block: 'start'});
- })
+ }
+
+  if(window.pageYOffset === 0){
+      let scrollCircle = document.querySelector('.scroll-circle');
+      scrollCircle.classList.add("hide-scroll");
+    }
+
+  window.onscroll = function(){
+
+    if( window.pageYOffset > 0){
+    let scrollCircle = document.querySelector('.scroll-circle');
+    scrollCircle.classList.remove("hide-scroll");
+    } else if(window.pageYOffset === 0){
+      let scrollCircle = document.querySelector('.scroll-circle');
+      scrollCircle.classList.add("hide-scroll");
+    }
+  };
+
+
 
 
 </script>
