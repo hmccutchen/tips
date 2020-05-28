@@ -1,5 +1,5 @@
 
-<div class="container review-form">
+<div class="container review-form" style="height:83vh;>
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <h2><%= @review.restaurant.name %></h2>
@@ -23,7 +23,7 @@
       <% end %><br>
       <% if @review.more_details.present? %>
       <span>Details: </span>
-      <% end %>
+      <% end %><br>
       <span>Rating: </span>
       <% @review.rating.try(:times) do %>
       <span class="stars"></span>
