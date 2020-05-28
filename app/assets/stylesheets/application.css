@@ -33,7 +33,6 @@
  }
 
 .scroll-circle{
-
 color: #c4b6b6;
 font-size: 44px;
 cursor: pointer;
@@ -73,7 +72,7 @@ z-index:1;
 }
 
 .navbar li:nth-child(3){
-  color: #ffdc64;
+  color: #242118;
 }
 
 
@@ -224,6 +223,7 @@ margin-top: 29px;
 .review-form .row{
   margin-bottom: 10px;
 }
+
 .tips a{
   color: #16a085;
   font-size: 18px;
