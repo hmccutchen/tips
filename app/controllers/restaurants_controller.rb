@@ -2,8 +2,6 @@ class RestaurantsController < ApplicationController
   def index
     @results = params[:search] || nil
 
-
-
     http_call = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
       http.headers["Authorization"] = "Bearer #{ENV['Yelp_Api_Key']}"
     end
