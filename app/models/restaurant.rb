@@ -1,5 +1,4 @@
 class Restaurant < ApplicationRecord
-  validates :name, uniqueness: { scope: :address }
+  validates_uniqueness_of :name, { scope: :address }
   has_many :reviews, dependent: :destroy
-
 end
