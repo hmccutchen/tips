@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index]
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reviews = Review.all

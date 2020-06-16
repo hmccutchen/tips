@@ -20,17 +20,23 @@
     <ul>
       <li><img class="star-logo" src="/star.png" alt="#"></li>
       <li class="logo">Tips</li>
-      <li><%= current_user.email if user_signed_in? %></li>
+      <li><%= link_to current_user.email, edit_user_registration_path if user_signed_in? %></li>
       <li><%= link_to "Reviews", root_path %></li>
 
         <li><%= link_to "Restaurant search", restaurants_path if user_signed_in? %></li>
       <% if user_signed_in? %>
         <li><%=link_to "log-out", destroy_user_session_path, method: :delete %></li>
+
       <% else %>
         <li><%= link_to "Sign In", new_user_session_path %></li>
           <% end %>
     </ul>
   </NAV>
+
+  <div class="container">
+    <% if notice %><div class="alert alert-info"> <%= notice %></div> <% end %>
+    <% if alert %><div class="alert alert-warning"><%= alert %></div> <% end %>
+  </div>
   <%= yield %>
 
 </body>
