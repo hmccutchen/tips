@@ -25,6 +25,14 @@
   font-size: 1.4em;
 }
 
+.alert-display{
+  z-index: 5;
+  position:fixed;
+  text-align: center;
+  width: 70%;
+  right: 150px;
+}
+
  /* navbar styles*/
  .navbar{
   background-color: #e74c3c;
