@@ -34,10 +34,21 @@
   </NAV>
 
   <div class="container">
-    <% if notice %><div class="alert alert-info"> <%= notice %></div> <% end %>
-    <% if alert %><div class="alert alert-warning"><%= alert %></div> <% end %>
+    <% if notice %><div  class="alert alert-info alert-display"> <%= notice %></div> <% end %>
+    <% if alert %><div  class="alert alert-warning alert-display"><%= alert %></div> <% end %>
   </div>
   <%= yield %>
 
 </body>
+
+<script>
+
+
+
+$(".alert-info").fadeOut(3000);
+$(".alert-warning").fadeOut(3000);
+
+
+
+</script>
 </html>
