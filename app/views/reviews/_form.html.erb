@@ -15,7 +15,7 @@
 <%= t.radio_button :clientele, 4, :id=> "4", :class => "star"  %><label id="clientele4" class="star" for="star4" title="Good!"></label>
 <%= t.radio_button :clientele, 3, :id=> "3", :class => "star"  %><label id="clientele3" class="star" for="star3" title="Average!"></label>
 <%= t.radio_button :clientele, 2, :id=> "2", :class => "star"  %><label id="clientele2" class="star"  for="star2" title="Poor!"> </label>
-<%= t.radio_button :clientele, 1, :id => "1", :class => "star" ,:checked => true  %><label id="clientele1" class="star"  for="star1" title=" very Poor!"> </label>
+<%= t.radio_button :clientele, 1, :id => "1", :class => "star" , :checked => true  %><label id="clientele1" class="star"  for="star1" title=" very Poor!"> </label>
 
 </div>
 
@@ -79,69 +79,72 @@
 
 <script>
 
-  c1 = document.getElementById("clientele1");
+  let c1 = document.getElementById("clientele1");
   c1.addEventListener("click", function(){document.getElementById("1").checked = true;})
-  c2 = document.getElementById("clientele2");
+
+  let c2 = document.getElementById("clientele2");
   c2.addEventListener("click", function(){document.getElementById("2").checked = true;})
-  c3 = document.getElementById("clientele3");
+
+  let c3 = document.getElementById("clientele3");
   c3.addEventListener("click", function(){document.getElementById("3").checked = true;})
-  c4 = document.getElementById("clientele4");
+
+  let c4 = document.getElementById("clientele4");
   c4.addEventListener("click", function(){document.getElementById("4").checked = true;})
 
-  c5 = document.getElementById("clientele5");
+  let c5 = document.getElementById("clientele5");
   c5.addEventListener("click", function(){document.getElementById("5").checked = true;})
 
 
 
 
-  team = document.getElementById("team1");
+  let team = document.getElementById("team1");
   team.addEventListener("click", function(){document.getElementById("t1").checked = true;})
 
-  team2 = document.getElementById("team2");
+  let team2 = document.getElementById("team2");
   team2.addEventListener("click", function(){document.getElementById("t2").checked = true;})
 
-  team3 = document.getElementById("team3");
+  let team3 = document.getElementById("team3");
   team3.addEventListener("click", function(){document.getElementById("t3").checked = true;})
-  team4 = document.getElementById("team4");
+  let team4 = document.getElementById("team4");
   team4.addEventListener("click", function(){document.getElementById("t4").checked = true;})
-  team5 = document.getElementById("team5");
+  let team5 = document.getElementById("team5");
   team5.addEventListener("click", function(){document.getElementById("t5").checked = true;})
 
 
- mange1 = document.getElementById("mange1");
+ let mange1 = document.getElementById("mange1");
 
  mange1.addEventListener("click", function(){document.getElementById("m1").checked = true;})
 
 
-   mange2= document.getElementById("mange2");
+   let mange2= document.getElementById("mange2");
 
   mange2.addEventListener("click", function(){document.getElementById("m2").checked = true;})
 
 
-   mange3 = document.getElementById("mange3");
+   let mange3 = document.getElementById("mange3");
 
   mange3.addEventListener("click", function(){document.getElementById("m3").checked = true;})
 
-   mange4= document.getElementById("mange4");
+   let mange4= document.getElementById("mange4");
 
   mange4.addEventListener("click", function(){document.getElementById("m4").checked = true;})
 
-  mange5 = document.getElementById("mange5");
+  let mange5 = document.getElementById("mange5");
 
   mange5.addEventListener("click", function(){document.getElementById("m5").checked = true;})
 
 
 
- rate1 = document.getElementById("rate1");
+ let rate1 = document.getElementById("rate1");
   rate1.addEventListener("click", function(){document.getElementById("r1").checked = true;})
-  rate2 = document.getElementById("rate2");
+  let rate2 = document.getElementById("rate2");
   rate2.addEventListener("click", function(){document.getElementById("r2").checked = true;})
-  rate3 = document.getElementById("rate3");
+  let rate3 = document.getElementById("rate3");
   rate3.addEventListener("click", function(){document.getElementById("r3").checked = true;})
-  rate4 = document.getElementById("rate4");
+  let rate4 = document.getElementById("rate4");
   rate4.addEventListener("click", function(){document.getElementById("r4").checked = true;})
 
-  rate5 = document.getElementById("rate5");
+  let rate5 = document.getElementById("rate5");
   rate5.addEventListener("click", function(){document.getElementById("r5").checked = true;
 })
 

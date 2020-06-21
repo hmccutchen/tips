@@ -1,0 +1,16 @@
+
+
+    <% flash.each do |type, msg| %>
+
+      <div class="alert alert-info alert-display">
+         <%= msg %>
+      </div>
+
+    <% end %>
+
+
+<script>
+
+  $(".alert-info").fadeOut(5000);
+
+</script>

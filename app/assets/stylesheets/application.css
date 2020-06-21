@@ -33,6 +33,25 @@
   right: 150px;
 }
 
+.user-dropdown{
+  position: absolute;
+  z-index: 3;
+}
+.cancel-button{
+    background-color: #ac0e0e;
+    border-color: black;
+    border-style: none;
+    color: white;
+    box-shadow: 1px 2px 1px black;
+}
+
+.cancel-button:hover{
+  width: 116;
+  background-color: #ca1616;
+  box-shadow: none;
+  border: none;
+}
+
  /* navbar styles*/
  .navbar{
   background-color: #e74c3c;
@@ -46,8 +65,9 @@ font-size: 44px;
 cursor: pointer;
 position: fixed;
 bottom:0;
-right: 12px;
+right: 15px;
 z-index:1;
+
 }
 
 .hide-scroll{
@@ -67,13 +87,11 @@ z-index:1;
 
 .navbar ul{
   display: flex;
-  list-style: none;
   justify-content: flex-end;
-
-
 }
 
 .navbar li{
+  list-style: none;
   margin-right: 20px;
   font-size: 23px;
   padding: 10px;
@@ -196,6 +214,29 @@ select#review_role{
   font-size: 20px;
 }
 
+.trix-editor-reviews{
+  margin-bottom:44px;
+}
+
+.update-button-reviews{
+  z-index: 2;
+  margin-left: 41%;
+  margin-bottom: 25px!important;
+  width: 25%;
+
+}
+
+.review-form-reviews{
+background-color:#F9FCF1;
+margin-top: 29px;
+border-radius: 7px;
+
+}
+
+.review-form-reviews .row{
+  margin-bottom: 10px;
+
+}
 input#review_shift_description{
   width: 106%;
   font-size: 20px;
@@ -217,7 +258,7 @@ trix-editor#review_content.trix-content{
 
 .review-submit-buttom{
   bottom: 72px;
-left: -74%;
+ left: -74%;
 
 }
 
