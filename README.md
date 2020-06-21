@@ -8,7 +8,6 @@ Tippio is an app made for Restaurant employees specifically, Servers and bartend
 *  **Ruby**- used for server side programming, active record integration, API logic.
 *  **Rails**- framework, implementing active record for search query logic, database design. building out controllers and models for app.
 *  **Vanilla Javascript**- Largely used for Dom manipulation specifically for the review form logic.
-*  **AJAX** - lightly used for like button for created reviews by users called "tips".
 *  **Bootstrap** - Used to create responsive design with bootstraps grid system.
 * **Vue.js** - used for specific rails views with SSR, Reviews liking and unliking posts
 # Gems

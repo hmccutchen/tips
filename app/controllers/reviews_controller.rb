@@ -30,6 +30,15 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def update
+    @user = current_user
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+
+    flash[:notice] = "Your Review: \"#{@review.title},\" has been updated!" if @review.save
+  end
+
+
   private
 
   def review_params
