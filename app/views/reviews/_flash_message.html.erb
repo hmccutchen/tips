@@ -1,13 +1,8 @@
 
 
-    <% flash.each do |type, msg| %>
-
-      <div class="alert alert-info alert-display">
-         <%= msg %>
-      </div>
-
-    <% end %>
-
+<div class="alert-info alert-display">
+ <h1><%= "#{@review.title.capitalize} has been updated!" %></h1>
+</div>
 
 <script>
 

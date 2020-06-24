@@ -62,6 +62,7 @@ group :development do
   gem 'spring'
   gem 'sqlite3'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'goldiloader', '~> 3.1', '>= 3.1.1'
 end
 
 group :test do

@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
     restaurant_data["businesses"].each do |restaurant|
       restaurant["image_url"]
       restaurant["name"]
-      restaurant["categories"][0]["title"]
+      restaurant["categories"][0].try(:title)
       restaurant["price"]
       restaurant["location"]["display_address"]
       restaurant["display_phone"]
@@ -42,7 +42,7 @@ class RestaurantsController < ApplicationController
       name: restaurant["name"],
       picture: restaurant["image_url"],
       address: restaurant["location"]["display_address"],
-      res_type: restaurant["categories"][0]["title"],
+      res_type: restaurant["categories"][0].try(:title),
       phone_number: restaurant["display_phone"],
       price_range: restaurant["price"],
       hours: restaurant["hours"],
