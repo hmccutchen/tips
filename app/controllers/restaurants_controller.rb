@@ -21,8 +21,6 @@ class RestaurantsController < ApplicationController
     end
 
     @restaurants = Restaurant.where(Restaurant.arel_table[:name].lower.matches("%#{@results}%"))
-    puts "kdflkja;lsdkjfa;lsdkjfa;lsdkjfa;lsdkjfl;kadshg;adsuf;alsdkafjdjsfpladskg;laskdjgf;alksdjf;lhglkasdjf;ldhg;lasdhl;finadsklga;ldkshg;flakdj"
-    puts @restaurants.inspect
     @restaurants ||= Restaurant.all
   end
 
