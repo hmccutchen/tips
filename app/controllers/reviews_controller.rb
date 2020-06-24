@@ -35,7 +35,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.update(review_params)
 
-    flash[:notice] = "Your Review: \"#{@review.title},\" has been updated!" if @review.save
   end
 
 
