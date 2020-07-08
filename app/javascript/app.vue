@@ -4,18 +4,18 @@
     <article class="container">
       <div class="row">
         <div v-for= "review in filterRestaurants" :key="review.id">
-          <div class="col-md-12">
+          <div class="col-md-12 col-md-12">
             <div class="card">
               <div class="hero">
                 <h2> {{review.restaurant.name}} </h2>
-                <a :href="'/reviews/' + review.id"><img class="image-post" :src= "review.restaurant.picture" alt=""></a><br>
+                <a :href="'/reviews/' + review.id"><img class="image-post img-fluid" :src= "review.restaurant.picture" alt=""></a><br>
                 <span class="address-font"> {{review.restaurant.address.replace(/[\[\]']+/g,"").replace(/"/g,"")}}</span> <br>
 
                 <span> {{review.restaurant.price_range}}</span><br>
               </div>
 
 
-              <div class=info>
+              <div class="info">
                   <span class="rtitle restaurant-review-title"><b>{{review.title.charAt(0).toUpperCase() + review.title.slice(1)}}</b></span><br>
                   <span>Role:
                   {{review.role}}

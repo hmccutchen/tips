@@ -16,8 +16,12 @@
         <div class="search-res">
          <p class="restaurant-name-link"><%= link_to "#{restaurant.name}", restaurant %></p>
          <a href="restaurants/<%= restaurant.id %>"><img class="image-post" src="<%= restaurant.picture  %>" alt="?No image?"></a> <br>
+         <%if restaurant.address.nil? %>
+         <span> No Address </span>
+         <% else %>
          <span><%= new_address_format(restaurant.address)%> </span><br>
-         <span><%= restaurant.res_type   %></span><br>
+         <% end %>
+         <span><%= restaurant.res_type %></span><br>
          <span><%= restaurant.phone_number %></span><br>
          <span><%= restaurant.price_range %></span><br>
          <span><%= restaurant.hours %><br></span>
@@ -29,7 +33,6 @@
 
 
 <script>
-
  function scrollUp(){
 
   let navBar = document.querySelector('.navbar');
@@ -51,6 +54,5 @@
       scrollCircle.classList.add("hide-scroll");
     }
   };
-
 
 </script>

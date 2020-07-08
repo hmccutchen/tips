@@ -34,6 +34,12 @@ class ReviewsController < ApplicationController
     @user = current_user
     @review = Review.find(params[:id])
     @review.update(review_params)
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+
 
   end
 

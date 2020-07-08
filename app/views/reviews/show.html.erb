@@ -1,11 +1,10 @@
 
-<div class="container review-form" style="height:83vh;>
+<div class="container review-form" style="height:auto;>
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <h2><%= @review.restaurant.name %></h2>
       <img class="image-post" src="<%=@review.restaurant.picture %>" alt="#"><br>
       <span class="address-font"><%= new_address_format(@review.restaurant.address)%></span><br>
-    <span><%= link_to "", root_path,  class: "glyphicon glyphicon-circle-arrow-left back-button" %></span>
     </div>
 
     <div class="col-md-6 col-sm-12 review-details">
@@ -31,6 +30,7 @@
       <span><%= @review.content %></span><br>
     </div>
 
+    <span><%= link_to "", root_path,  class: "glyphicon glyphicon-circle-arrow-left back-button" %></span>
   </div>
 </div>
 
