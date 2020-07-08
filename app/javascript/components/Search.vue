@@ -1,15 +1,8 @@
 <template>
   <div class='container'>
-    <h4>Filter</h4>
+
     <input type="text" v-model="filterText" @keyup='filterMethod(filterText)' placeholder="Type Restaurant Name" />
   </div>
-
-
-
-
-
-
-
 </template>
 
 <script>

@@ -6,7 +6,7 @@
     <% @review.each do |restaurant_review| %>
 
     <div class="col-md-6 ">
-      <%= form_for restaurant_review,:html => {:class => "review-form-reviews", }, remote: true do |t| %>
+      <%= form_for restaurant_review,:html => {:class => "review-form-reviews", :id => "edit-review-form" }, remote: true do |t| %>
 
       <img style="margin-bottom: 15px; width:100%;" class="image-post" src="<%=restaurant_review.restaurant.picture %>" alt="#">
       <p ><%= t.text_field :title%></p>
@@ -65,9 +65,10 @@
 
 
       <%= t.rich_text_area :content, placeholder: "Add Details", class: "trix-editor-reviews" %><br/>
-      <%= t.submit "Update", data: {disable_with: "Submitting..."}, class: "btn btn-success update-button-reviews" %>
 
+      <%= t.submit "Update Review", data: {disable_with: "Submitting..."}, class: "btn btn-success update-button-reviews" %><br>
 
+      <%= link_to "Delete Review", review_path(restaurant_review),  method: :delete, remote: true, data: {confirm: "Are Your Sure you want to delete this review?"}, class: "btn btn-danger" %>
 
       <% end %>
     </div>

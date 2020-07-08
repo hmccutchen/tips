@@ -21,6 +21,10 @@
   font-family: 'Dosis', sans-serif;
  }
 
+ .navbar-collapse{
+  display:none;
+ }
+
 .address-font{
   font-size: 1.4em;
 }
@@ -58,6 +62,21 @@
   margin-bottom: 0px!important;
   border-radius: 0px!important;
  }
+
+  @media screen and (max-width: 500px){
+  .navbar ul > li + li + li{
+      display: none;
+  }
+
+ }
+
+ @media screen and (max-width: 700px){
+  .image-post{
+    max-width: 100%;
+    height: auto;
+  }
+ }
+
 
 .scroll-circle{
 color: #c4b6b6;
