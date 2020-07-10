@@ -9,6 +9,7 @@
       <%= form_for restaurant_review,:html => {:class => "review-form-reviews", :id => "edit-review-form" }, remote: true do |t| %>
 
       <img style="margin-bottom: 15px; width:100%;" class="image-post" src="<%=restaurant_review.restaurant.picture %>" alt="#">
+      <h4><b><%= restaurant_review.restaurant.name %></b></h4>
       <p ><%= t.text_field :title%></p>
       <%= t.select :role, [['Server'],['Bartender'],['Other']], :required => true, :prompt => "choose position" %><br>
       <%= t.number_field :tip_avg, placeholder: "Tip average/Hr", :required => true %><br>
