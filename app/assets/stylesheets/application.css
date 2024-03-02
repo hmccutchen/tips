@@ -17,159 +17,158 @@
 /*@import "font-awesome-sprockets";
 @import "font-awesome";*/
 
- *{
-  font-family: 'Dosis', sans-serif;
- }
+* {
+  font-family: "Dosis", sans-serif;
+}
 
- .navbar-collapse{
-  display:none;
- }
+.navbar-collapse {
+  display: none;
+}
 
-.address-font{
+.address-font {
   font-size: 1.4em;
 }
 
-.alert-display{
+.alert-display {
   z-index: 5;
-  position:fixed;
+  position: fixed;
   text-align: center;
   width: 70%;
   right: 150px;
+  color: white;
 }
 
-.user-dropdown{
+.user-dropdown {
   position: absolute;
   z-index: 3;
 }
-.cancel-button{
-    background-color: #ac0e0e;
-    border-color: black;
-    border-style: none;
-    color: white;
-    box-shadow: 1px 2px 1px black;
+.cancel-button {
+  background-color: #ac0e0e;
+  border-color: black;
+  border-style: none;
+  color: white;
+  box-shadow: 1px 2px 1px black;
 }
 
-.cancel-button:hover{
+.cancel-button:hover {
   width: 116;
   background-color: #ca1616;
   box-shadow: none;
   border: none;
 }
 
- /* navbar styles*/
- .navbar{
+/* navbar styles*/
+.navbar {
   background-color: #e74c3c;
-  margin-bottom: 0px!important;
-  border-radius: 0px!important;
- }
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
+}
 
-  @media screen and (max-width: 500px){
-  .navbar ul > li + li + li{
-      display: none;
+@media screen and (max-width: 500px) {
+  .navbar ul > li + li + li {
+    display: none;
   }
+}
 
- }
-
- @media screen and (max-width: 700px){
-  .image-post{
+@media screen and (max-width: 700px) {
+  .image-post {
     max-width: 100%;
     height: auto;
   }
- }
-
-
-.scroll-circle{
-color: #c4b6b6;
-font-size: 44px;
-cursor: pointer;
-position: fixed;
-bottom:0;
-right: 15px;
-z-index:1;
-
 }
 
-.hide-scroll{
+.scroll-circle {
+  color: #c4b6b6;
+  font-size: 44px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  z-index: 1;
+}
+
+.hide-scroll {
   display: none;
 }
 
-.scroll-circle:hover{
- animation: upAnimation 0.4s infinite;
- color:#F9FCF1;
+.scroll-circle:hover {
+  animation: upAnimation 0.4s infinite;
+  color: #f9fcf1;
 }
 
-@keyframes upAnimation{
-  0% {bottom: 5px}
-  40%{bottom: 10px}
-  100%{bottom: 20px}
+@keyframes upAnimation {
+  0% {
+    bottom: 5px;
+  }
+  40% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 20px;
+  }
 }
 
-.navbar ul{
+.navbar ul {
   display: flex;
   justify-content: flex-end;
 }
 
-.navbar li{
+.navbar li {
   list-style: none;
   margin-right: 20px;
   font-size: 23px;
   padding: 10px;
 }
 
-.navbar li:nth-child(3){
+.navbar li:nth-child(3) {
   color: #242118;
 }
 
-
-.navbar a:hover{
-  color:#ffffff;
- text-decoration: none;
-
+.navbar a:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.navbar a{
- color: #ecf0f1;
+.navbar a {
+  color: #ecf0f1;
 }
-
 
 /* styling for homepage cards*/
-.card{
+.card {
   display: flex;
-  background-color: #34495e;
+  background-color: #272a2a;
 }
 
-
-.hero span{
-  color:#ecf0f1 ;
+.hero span {
+  color: #ecf0f1;
   font-size: 16px;
-  padding-left:20px;
+  padding-left: 20px;
 }
-.card h2{
-  color:#ecf0f1;
+.card h2 {
+  color: #ecf0f1;
   text-align: center;
 }
-.info{
+.info {
   margin-top: 73px;
-  width:50%;
+  width: 50%;
   margin-left: 20%;
   color: #ecf0f1;
- /* font-weight: normal;*/
+  /* font-weight: normal;*/
   font-size: 17px;
   padding-bottom: 5px;
 }
 
-.card:after{
+.card:after {
   content: " ";
   height: 1%;
   width: 97.3%;
   position: absolute;
   background-color: white;
-
 }
 
 /* navbar logo styles */
 
-.star-logo{
+.star-logo {
   position: absolute;
   left: 21px;
   width: 24px;
@@ -178,127 +177,119 @@ z-index:1;
 .logo {
   position: absolute;
   left: 0;
-  color:#ecf0f1;
+  color: #ecf0f1;
 }
 
-li.logo{
-font-size: 34px;
+li.logo {
+  font-size: 34px;
 }
 
 /* form styling for reviews*/
-.rform{
-background-color: #F6FAEB;
-/*margin-right: 30px;*/
-
+.rform {
+  background-color: #f6faeb;
+  /*margin-right: 30px;*/
 }
 
-div.container.rform{
- /* margin-right: 20px;
+div.container.rform {
+  /* margin-right: 20px;
   margin-top:30px;*/
-width:54%;
+  width: 54%;
 }
 
-input.btn.primary{
-text-align: center;
-position: absolute;
-right: 238px;
-padding-top: 6px;
-margin-top: 8px;
-background-color: #0946B2;
-color: white;
-width: 126px;
-font-size: 18px;
+input.btn.primary {
+  text-align: center;
+  position: absolute;
+  right: 238px;
+  padding-top: 6px;
+  margin-top: 8px;
+  background-color: #0946b2;
+  color: white;
+  width: 126px;
+  font-size: 18px;
 }
 
-input.btn.primary:hover{
-  background-color: #2D4B7F;
+input.btn.primary:hover {
+  background-color: #2d4b7f;
 }
 
-input#review_title{
+input#review_title {
   /*width: 106%;*/
   font-size: 20px;
 }
-input::placeholder{
+input::placeholder {
   text-align: center;
   font-size: 15px;
 }
 
-input#review_tip_avg{
+input#review_tip_avg {
   /*width: 106%;*/
   font-size: 20px;
 }
 
-select#review_role{
+select#review_role {
   /*width: 106%;*/
   font-size: 20px;
 }
 
-.trix-editor-reviews{
-  margin-bottom:44px;
+.trix-editor-reviews {
+  margin-bottom: 44px;
 }
 
-.update-button-reviews{
+.update-button-reviews {
   z-index: 2;
   margin-left: 41%;
-  margin-bottom: 25px!important;
+  margin-bottom: 25px !important;
   width: 25%;
-
 }
 
-.review-form-reviews{
-background-color:#F9FCF1;
-margin-top: 29px;
-border-radius: 7px;
-
+.review-form-reviews {
+  background-color: #f9fcf1;
+  margin-top: 29px;
+  border-radius: 7px;
 }
 
-.review-form-reviews .row{
+.review-form-reviews .row {
   margin-bottom: 10px;
-
 }
-input#review_shift_description{
+input#review_shift_description {
   width: 106%;
   font-size: 20px;
 }
 
-input#review_more_details{
+input#review_more_details {
   /*width: 106%;*/
   font-size: 20px;
 }
 
-form#new_review.new_review{
-font-size: 11px;
-margin-top: 62px;
+form#new_review.new_review {
+  font-size: 11px;
+  margin-top: 62px;
 }
 
-trix-editor#review_content.trix-content{
+trix-editor#review_content.trix-content {
   font-size: 14px;
 }
 
-.review-submit-buttom{
+.review-submit-buttom {
   bottom: 72px;
- left: -74%;
-
+  left: -74%;
 }
 
-
-.review-form{
-background-color:#F9FCF1;
-margin-top: 29px;
-
+.review-form {
+  background-color: #f9fcf1;
+  margin-top: 29px;
 }
 
-.review-form .row{
+.review-form .row {
   margin-bottom: 10px;
 }
 
-.tips a{
+.tips a {
   color: #16a085;
   font-size: 18px;
 }
 
-.tips a:hover{
+.tips a:hover {
   color: #1abc9c;
   text-decoration: none;
 }
-
