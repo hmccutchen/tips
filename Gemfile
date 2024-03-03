@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1', '>= 5.2.4.2'
+gem 'rails', '~> 6.1'
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
@@ -16,7 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 gem 'curb', '~> 0.9.6'
-gem 'json', '~> 1.8', '>= 1.8.3'
+
+gem 'activesupport', '~> 6.1.7'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -33,9 +34,9 @@ gem 'jquery-rails'
 gem 'foreman'
 gem 'webpacker'
 gem 'devise', '~> 4.7.1'
-gem 'binding_of_caller', '~> 0.8.0'
+
 gem 'dotenv-rails'
-gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
+gem 'actiontext', '~> 6.0'
 gem 'image_processing'
 gem 'rubocop', '~> 0.85.1'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
