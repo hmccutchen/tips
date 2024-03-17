@@ -14,9 +14,6 @@
  *= require_self
  */
 
-/*@import "font-awesome-sprockets";
-@import "font-awesome";*/
-
 * {
   font-family: "Dosis", sans-serif;
 }
@@ -31,13 +28,15 @@
 
 .alert-display {
   z-index: 5;
-  position: fixed;
+  position: absolute;
   text-align: center;
   width: 70%;
   right: 150px;
-  color: white;
 }
 
+.alert-warning {
+  color: red;
+}
 .user-dropdown {
   position: absolute;
   z-index: 3;

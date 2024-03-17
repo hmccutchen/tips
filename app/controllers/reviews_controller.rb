@@ -12,21 +12,26 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.find(params[:restaurant_id])
+
     @review = Review.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def create
     @user = current_user
     @restaurant = Restaurant.find(params[:restaurant_id])
     @restaurant_review = @restaurant.reviews.new(review_params)
+    @restaurant_review.user = @user
 
-    @user.reviews << @restaurant_review
 
     if @restaurant_review.save
+      @user.reviews << @restaurant_review
       redirect_to "/"
     else
-      render "new"
+      redirect_to restaurant_path(@restaurant)
+
+       flash[:alert] = "Please fill out all fields #{@restaurant_review.errors.full_messages}"
+
     end
   end
 
