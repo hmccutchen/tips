@@ -2,12 +2,15 @@ class RestaurantsController < ApplicationController
   def index
     @results = params[:search] || nil
 
+    return dummy_data if Rails.env.test?
+
+
     http_call = Curl.get("https://api.yelp.com/v3/businesses/search?&term=#{@results}&location=New+York") do |http|
       http.headers["Authorization"] = "Bearer #{ENV['Yelp_Api_Key']}"
     end
     restaurant_data = JSON.parse(http_call.body_str)
-
     restaurant_data["businesses"].each do |restaurant|
+
       restaurant["image_url"]
       restaurant["name"]
       restaurant["categories"][0].try(:title)
@@ -15,7 +18,6 @@ class RestaurantsController < ApplicationController
       restaurant["location"]["display_address"]
       restaurant["display_phone"]
       restaurant["rating"]
-      restaurant["image_url"]
 
       restaurant_save_data(restaurant)
     end
@@ -28,8 +30,13 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
+  def dummy_data
+
+    @restaurants = params[:search].present? ? Restaurant.where(name: params[:search]) : Restaurant.all
+
+  end
+
   def show
-    @review = Review.new
     @restaurant = Restaurant.find(params[:id])
   end
 
