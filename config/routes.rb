@@ -18,7 +18,7 @@ end
       resources :restaurants
     end
 
-
+    resources :restaurants
 
   resources :restaurants do
     resources :reviews
